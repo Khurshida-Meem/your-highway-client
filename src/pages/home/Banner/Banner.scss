@@ -1,0 +1,41 @@
+.banner{
+    width: 100%;
+    background-color: black;
+    position: relative;
+}
+
+.banner-img{
+    height: 100vh;
+}
+
+.carousel-content{
+    position:absolute;
+    top: 300px;
+}
+.carousel-content h1{
+    font-size: 60px;
+}
+
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.banner-img {
+   -webkit-animation: zoom 20s; 
+   animation: zoom 20s; 
+} 
