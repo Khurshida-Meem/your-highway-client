@@ -17,3 +17,20 @@ body {
 .pink-bg{
     background-color: $color-pink !important;
 }
+
+.button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px gray;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.button:hover{
+    box-shadow: 5px 5px 10px gray;
+}

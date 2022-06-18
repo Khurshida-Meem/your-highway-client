@@ -1,0 +1,38 @@
+@import '../../sass/variable.module';
+
+.side-content {
+    background-color: $mid-blue;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: 850ms;
+}
+
+.form-inputs input {
+    display: block;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    width: 25rem;
+    transition: 0.3s;
+    box-shadow: 2px 2px 4px gray;
+    border-left: 4px solid $primary-blue;
+}
+
+.field {
+    background-color: rgb(227, 242, 255);
+}
+
+.form-inputs input:hover {
+    box-shadow: 5px 5px 10px gray;
+}
+
+.error {
+    color: red;
+    display: block;
+}

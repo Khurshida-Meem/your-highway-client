@@ -7,6 +7,7 @@ import MobileMenu from './mobile-menu';
 import { Avatar, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Dropdown from './dropdown';
+import useAuth from '../../hooks/useAuth';
 
 
 let key = 0;
@@ -27,13 +28,13 @@ const pages = [
         name: 'Packages',
         link: '/packages',
     },
-    {
-        name: 'Sign In',
-        link: '/sign-in',
-    },
+
 ]
 
 const Navbar = () => {
+
+    const { firebaseContext } = useAuth();
+    const { user } = firebaseContext;
 
     return (
         <AppBar className='primary-blue-bg' position="static">
@@ -53,18 +54,24 @@ const Navbar = () => {
                                     </div>
                                 ))
                             }
+                            {user?.email ? '' : <div className='ms-4'>
+                                <Link className='link py-1 px-3' to='sign-in'>Sign In</Link>
+                            </div>}
                         </Box>
-                        
+
                     </Box>
                     <Box sx={{ flexGrow: 1 }}></Box>
 
-                    <Avatar
-                        sx={{ ml: 4, mr: 1 }}
-                        className='pink-bg'
-                        alt="Khurshida"
-                        src="/broken-image.jpg"
-                    />
-                    <Dropdown name='Khurshida Meem' />
+                    {user.email ?
+                        <>
+                            <Avatar
+                                sx={{ ml: 4, mr: 1 }}
+                                className='pink-bg'
+                                alt={user?.displayName}
+                                src="/broken-image.jpg"
+                            />
+                            <Dropdown name={user?.displayName} />
+                        </> : ''}
 
                     <Box sx={{ display: { md: 'none' } }}>
                         <MobileMenu />

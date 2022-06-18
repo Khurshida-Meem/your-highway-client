@@ -14,13 +14,14 @@ const useFirebase = () => {
 
     // create user using email password
 
-    const createUsingEmailPassword = (email, password, name, history) => {
+    const createUsingEmailPassword = (email, password, name, navigate) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
+                console.log(user);
                 // save user to the database
                 saveUser(email, name, 'POST');
                 // send name to firebase after creation
@@ -28,8 +29,9 @@ const useFirebase = () => {
                     displayName: name
                 }).then(() => {
                 }).catch((error) => {
+                    setError(error.message);
                 });
-                history.replace('/');
+                navigate('/');
             })
             .catch((error) => {
                 setError(error.message);
@@ -59,7 +61,6 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                console.log(result);
                 const user = result.user;
                 saveUser(user.email, user.displayName, 'PUT');
                 setError('');
@@ -111,6 +112,7 @@ const useFirebase = () => {
         })
             .then()
     }
+
 
     return {
         user,
