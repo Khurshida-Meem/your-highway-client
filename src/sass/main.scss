@@ -1,0 +1,19 @@
+@import './variable.module.scss';
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap');
+
+body {
+  font-family: 'Merriweather',serif;
+}
+
+.gradient-bg{
+    background-image: linear-gradient(to right, $primary-blue, $secondary-blue) !important;
+}
+
+.primary-blue-bg{
+    background-color: $primary-blue !important;
+}
+
+.pink-bg{
+    background-color: $color-pink !important;
+}

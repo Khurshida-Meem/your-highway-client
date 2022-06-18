@@ -1,0 +1,23 @@
+@import '../../sass/variable.module.scss';
+
+.logo {
+    height: 30px;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+    border: 2px solid $light-blue;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.link:hover{
+    background-color: $light-blue;
+    color: $color-dark;
+}
+
+.border{
+    border-left: 3px solid $color-pink !important;
+    border-radius: 4px !important;
+}

@@ -1,10 +1,14 @@
+import AuthProvider from "./contexts/AuthProvider";
 import Main from "./Routes";
 import './sass/main.scss';
 
 function App() {
   return (
     <div>
-      <Main />
+      <AuthProvider>
+        <Main />
+      </AuthProvider>
+
     </div>
   );
 }

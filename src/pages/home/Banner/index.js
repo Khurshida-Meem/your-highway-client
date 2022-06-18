@@ -5,7 +5,7 @@ import img3 from '../../../assets/summertime-background-img-4.jpg';
 import { Carousel } from 'react-bootstrap';
 import './Banner.scss';
 
-
+let key = 0;
 const banner = [
     {
         img: img1,
@@ -25,16 +25,16 @@ const banner = [
 const Banner = () => {
     return (
         <div className='banner'>
-
-            <Carousel fade controls={false}
-                style={{ "marginTop": "-100px" }}
+            <Carousel
+                fade
+                controls={false}
+                indicators={false}
             >
-
                 {
                     banner.map(data => (
-                        <Carousel.Item >
+                        <Carousel.Item key={key++} >
                             <img
-                                className="d-block w-100 banner-img opacity-25"
+                                className="d-block w-100 banner-img opacity-50"
                                 src={data.img}
                                 alt="First slide"
                             />
