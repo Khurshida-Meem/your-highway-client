@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import './variable.module';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    color: $color-dark;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    cursor: default;
+}
+
+h1,
+.h1 {
+    font-size: 2rem;
+}
+
+h2,
+.h2 {
+    font-size: 1.8rem;
+}
+
+h3,
+.h3 {
+    font-size: 1.5rem;
+}
+
+h4,
+.h4 {
+    font-size: 1.2rem;
+}
+
+h5,
+.h5 {
+    font-size: 1.2rem;
+}
+
+h6,
+.h6 {
+    font-size: 1rem;
+}
+
+p,
+.p {
+    font-size: 0.8rem;
+    color: $color-grey;
+}
+
+small,
+.small {
+    font-size: 0.7rem;
+}
+
+.font-bold-700 {
+    font-weight: 700 !important;
+}
+
+.font-bold-600 {
+    font-weight: 600;
+}
+
+.text-align-justify{
+    text-align: justify;
+}

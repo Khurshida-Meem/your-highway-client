@@ -7,13 +7,13 @@
 .link{
     color: white;
     text-decoration: none;
-    border: 2px solid $light-blue;
+    border: 2px solid white;
     border-radius: 50px;
     transition: 0.3s;
 }
 
 .link:hover{
-    background-color: $light-blue;
+    background-color: white;
     color: $color-dark;
 }
 

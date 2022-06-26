@@ -1,10 +1,17 @@
 @import './variable.module.scss';
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
 
 body {
   font-family: 'Merriweather',serif;
 }
+
 
 .gradient-bg{
     background-image: linear-gradient(to right, $primary-blue, $secondary-blue) !important;
@@ -18,13 +25,17 @@ body {
     background-color: $color-pink !important;
 }
 
+.primary-text{
+    color: $primary-blue !important;
+}
+
 .button{
     cursor: pointer;
     border: none;
     outline: none;
     color: white;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1rem;
     border-radius: 4px;
     box-shadow: 2px 2px 4px gray;
     letter-spacing: 2px;
@@ -33,4 +44,26 @@ body {
 
 .button:hover{
     box-shadow: 5px 5px 10px gray;
+}
+
+
+// img zoom on hover 
+
+.card-container {
+    transition: 0.3s;
+    
+}
+
+.img-container {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.img-container img {
+    z-index: -1;
+    transition: transform .7s ease;
+}
+
+.card-container:hover .img-container img {
+    transform: scale(1.2);
 }

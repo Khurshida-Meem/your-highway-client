@@ -9,15 +9,18 @@ let key = 0;
 const banner = [
     {
         img: img1,
-        heading: 'We Believe Your Way is Highway'
+        heading: 'We Believe Your Way is The Highway',
+        desc: 'Find awesome flights, hotel, tour, car and packages'
     },
     {
         img: img2,
-        heading: 'We Are Here to Guide You at Our Best '
+        heading: 'Explore The World Together',
+        desc: 'Find awesome flights, hotel, tour, car and packages'
     },
     {
         img: img3,
-        heading: 'Make your Vacation One of the Best With Us'
+        heading: 'Make your Vacation One of the Best With Us',
+        desc: 'Find awesome flights, hotel, tour, car and packages'
     },
 ]
 
@@ -34,12 +37,13 @@ const Banner = () => {
                     banner.map(data => (
                         <Carousel.Item key={key++} >
                             <img
-                                className="d-block w-100 banner-img opacity-50"
+                                className="img-fluid d-block w-100 banner-img opacity-50"
                                 src={data.img}
                                 alt="First slide"
                             />
                             <Carousel.Caption className='carousel-content'>
-                                <h1>{data.heading}</h1>
+                                <h1 className='text-white'>{data.heading}</h1>
+                                <p className='h3 text-white'>{data.desc}</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                     ))
