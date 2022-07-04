@@ -9,10 +9,6 @@ h5,
 h6 {
     font-family: 'Roboto', sans-serif;
     color: $color-dark;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
     cursor: default;
 }
 
@@ -50,6 +46,7 @@ p,
 .p {
     font-size: 0.8rem;
     color: $color-grey;
+    cursor: default;
 }
 
 small,

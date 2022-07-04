@@ -29,6 +29,10 @@ body {
     color: $primary-blue !important;
 }
 
+.radius-7{
+    border-radius: 7px;
+}
+
 .button{
     cursor: pointer;
     border: none;
@@ -67,3 +71,9 @@ body {
 .card-container:hover .img-container img {
     transform: scale(1.2);
 }
+
+
+::selection {
+    color: #fff;
+    background-color: $color-dark;
+  }

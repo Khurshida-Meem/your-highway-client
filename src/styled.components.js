@@ -13,3 +13,22 @@ export const PrimaryButton = styled.button`
     margin-top: ${(props) => props.marginTop};
   
 `;
+
+export const ImgZoom = styled.div`
+height: 100%;
+width: 100%;
+background: ${(props) => props.url};
+background-position:center;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+&:hover {
+    -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  }
+`
