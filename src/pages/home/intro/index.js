@@ -5,6 +5,7 @@ import img2 from '../../../assets/imagination2.png';
 import img3 from '../../../assets/imagination3.png';
 import './intro.scss';
 
+let key = 0;
 
 const cards = [
     {
@@ -24,8 +25,8 @@ const cards = [
 const Intro = () => {
     return (
         <Container sx={{ mt: 7 }}>
-            <div class="row">
-                <div class="col mt-5 d-flex align-items-center">
+            <div className="row">
+                <div className="col mt-5 d-flex align-items-center">
                     <div>
                         <h1>Go beyond your imagination</h1>
                     <hr className='me-5' />
@@ -35,7 +36,7 @@ const Intro = () => {
                 </div>
                 {
                     cards.map(data => (
-                        <div className="col mt-5">
+                        <div key={key++} className="col mt-5">
                             <div className='card-container intro'>
                                 <div className='img-container hover-effect'>
                                     <img className='img-fluid intro-img' src={data.img} alt="" />

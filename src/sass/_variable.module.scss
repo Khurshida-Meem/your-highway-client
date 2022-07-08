@@ -1,17 +1,17 @@
 $color-dark: #094067;
 $color-grey: #5f6c7b;
-$color-pink: #ef4565;
+$color-pink: #F4136B;
 $light-blue: #d8eefe;
 $primary-blue: #005A87;
 $secondary-blue: #49E2EE;
 $mid-blue: #017DAB;
 
 :export {
-    color-dark: $color-dark;
-    color-grey: $color-grey;
-    color-pink: $color-pink;
-    light-blue: $light-blue;
-    primary-blue: $primary-blue;
-    secondary-blue: $secondary-blue;
-    mid-blue: $mid-blue;
+    colorDark: $color-dark;
+    colorGrey: $color-grey;
+    colorPink: $color-pink;
+    lightBlue: $light-blue;
+    primaryBlue: $primary-blue;
+    secondaryBlue: $secondary-blue;
+    midBlue: $mid-blue;
 }

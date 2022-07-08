@@ -19,39 +19,39 @@ h1,
 
 h2,
 .h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
 }
 
 h3,
 .h3 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
 }
 
 h4,
 .h4 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
 }
 
 h5,
 .h5 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
 }
 
 h6,
 .h6 {
-    font-size: 1rem;
+    font-size: 1rem !important;
 }
 
 p,
 .p {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
     color: $color-grey;
     cursor: default;
 }
 
 small,
 .small {
-    font-size: 0.7rem;
+    font-size: 0.7rem !important;
 }
 
 .font-bold-700 {

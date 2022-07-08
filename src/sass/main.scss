@@ -25,6 +25,10 @@ body {
     background-color: $color-pink !important;
 }
 
+.pink-color{
+    color: $color-pink !important;
+}
+
 .primary-text{
     color: $primary-blue !important;
 }
@@ -39,7 +43,6 @@ body {
     outline: none;
     color: white;
     font-weight: 600;
-    font-size: 1rem;
     border-radius: 4px;
     box-shadow: 2px 2px 4px gray;
     letter-spacing: 2px;
@@ -50,6 +53,10 @@ body {
     box-shadow: 5px 5px 10px gray;
 }
 
+.title-style {
+    border-top: 3px solid $color-pink;
+    border-bottom: 3px solid $color-pink;
+  }
 
 // img zoom on hover 
 

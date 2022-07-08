@@ -1,3 +1,23 @@
+@import '../../../sass/variable.module';
+
 .text-bg{
     background-color: rgba(0, 0, 0, 0.379) !important;
+}
+
+.slick-dots li button:before {
+    font-size: 10px !important;
+    margin-top: 15px;
+}
+
+li.slick-active>button::before {
+    color: $color-pink  !important;
+}
+
+
+slick-track {
+    display: flex !important;
+}
+
+.slick-slide {
+    height: auto !important;
 }
