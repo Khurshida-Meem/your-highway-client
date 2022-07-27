@@ -3,66 +3,95 @@
 
 
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 body {
-  font-family: 'Merriweather',serif;
+    font-family: 'Merriweather', serif;
 }
 
 
-.gradient-bg{
+.gradient-bg {
     background-image: linear-gradient(to right, $primary-blue, $secondary-blue) !important;
 }
 
-.primary-blue-bg{
-    background-color: $primary-blue !important;
+.dark-bg {
+    background-color: $color-dark  !important;
 }
 
-.pink-bg{
-    background-color: $color-pink !important;
+.primary-blue-bg {
+    background-color: $primary-blue  !important;
 }
 
-.pink-color{
-    color: $color-pink !important;
+.pink-bg {
+    background-color: $color-pink  !important;
 }
 
-.primary-text{
-    color: $primary-blue !important;
+.red-bg{
+    background-color: $color-red !important;
 }
 
-.radius-7{
+.pink-color {
+    color: $color-pink  !important;
+}
+
+.primary-text {
+    color: $primary-blue  !important;
+}
+
+.color-red {
+    color: $color-red !important;
+}
+
+.color-green{
+    color: $color-green !important;
+}
+
+.radius-7 {
     border-radius: 7px;
 }
 
-.button{
+
+
+.button {
     cursor: pointer;
     border: none;
     outline: none;
     color: white;
     font-weight: 600;
     border-radius: 4px;
-    box-shadow: 2px 2px 4px gray;
     letter-spacing: 2px;
     transition: 0.3s;
+    box-shadow: 2px 2px 4px gray;
 }
 
-.button:hover{
+.button:hover {
     box-shadow: 5px 5px 10px gray;
 }
+
 
 .title-style {
     border-top: 3px solid $color-pink;
     border-bottom: 3px solid $color-pink;
-  }
+}
+
+.primary-bordered-btn {
+    border: 2px solid $primary-blue;
+    color: $primary-blue;
+}
+
+.primary-bordered-btn:hover {
+    background-color: $primary-blue;
+    color: white;
+}
 
 // img zoom on hover 
 
 .card-container {
     transition: 0.3s;
-    
+
 }
 
 .img-container {
@@ -83,4 +112,8 @@ body {
 ::selection {
     color: #fff;
     background-color: $color-dark;
-  }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

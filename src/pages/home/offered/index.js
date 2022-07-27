@@ -4,6 +4,22 @@ import img from '../../../assets/offer.png';
 import OfferedPlaces from './offered-places';
 import './offered.scss';
 
+
+
+const hotels = [
+    {
+        hotel_name: 'Kantua hotel',
+        country: 'France',
+        place: 'Disney land, Paris',
+        room_services: [
+            {
+                service_name: ''
+            }
+        ]
+    }
+]
+
+
 const OfferedServices = () => {
     return (
         <Container sx={{ mt: 20 }}>

@@ -32,6 +32,16 @@ export const fetchPlacesData = () => {
             .catch(error => {
                 const errMsg = error.message
                 dispatch(fetchPlacesFail(errMsg))
-        })
+            })
     }
 }
+
+// export const sendNewPlace = (data, reset) => {
+//     travelAPI.post('places', data)
+//         .then(res => {
+//             if (res.data.insertedId) {
+//                 alert('added place successfully');
+//                 reset();
+//             }
+//         })
+// }

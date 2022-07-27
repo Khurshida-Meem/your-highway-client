@@ -3,11 +3,9 @@ import { styled, alpha } from '@mui/material/styles';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { PrimaryButton } from '../../../styled.components';
 import LoginIcon from '@mui/icons-material/Login';
-import PersonIcon from '@mui/icons-material/Person';
-import { useNavigate } from 'react-router-dom';
-import { PrimaryButton } from '../../styled.components';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
 
 const StyledMenu = styled((props) => (
     <Menu
@@ -53,35 +51,26 @@ const StyledMenu = styled((props) => (
 const Dropdown = ({ name }) => {
 
     const { firebaseContext } = useAuth();
-    const { logOut } = firebaseContext;
-
+    const { user, logOut } = firebaseContext;
 
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const navigate = useNavigate();
     const open = Boolean(anchorEl);
+
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
-    const handleLinkClick = link => {
-        navigate('..' + link, { replace: true });
-        setAnchorEl(null);
 
-    };
+    
 
     const handleClose = () => {
         setAnchorEl(null);
-    }
-
-    const handleLogout = () => {
-        logOut();
-        handleClose();
     }
 
     return (
         <div>
             <PrimaryButton
                 bg='transparent'
-                color='white'
                 id="dropdown-btn"
                 aria-controls={open ? 'demo-customized-menu' : undefined}
                 aria-haspopup="true"
@@ -90,7 +79,7 @@ const Dropdown = ({ name }) => {
                 onClick={handleClick}
             >
                 <div className='d-flex align-items-center'>
-                    {name}
+                    {user.displayName}
                     <KeyboardArrowDownIcon />
                 </div>
 
@@ -104,11 +93,8 @@ const Dropdown = ({ name }) => {
                 open={open}
                 onClose={handleClose}
             >
-                <MenuItem onClick={() => handleLinkClick('/dashboard')} disableRipple>
-                    <PersonIcon className='secondary-text' />
-                    My Profile
-                </MenuItem>
-                <MenuItem onClick={handleLogout} disableRipple>
+                
+                <MenuItem onClick={logOut} disableRipple>
                     <LoginIcon className='secondary-text' />
                     Logout
                 </MenuItem>

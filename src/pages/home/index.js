@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Banner from './Banner';
+import CountryFiltered from './country-based';
 import Intro from './intro';
 import OfferedServices from './offered';
 
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner />
             <Intro />
             <OfferedServices />
+            <CountryFiltered />
         </div>
     );
 };

@@ -1,0 +1,42 @@
+@import '../../../sass/variable.module';
+
+
+.MuiBadge-colorSecondary{
+    background-color: $color-pink !important;
+}
+
+.menu-header {
+    background-color: $color-dark;
+    display: flex;
+    justify-content: flex-start !important;
+}
+
+.menu-items {
+    background-color: $color-dark  !important;
+    height: 150vh;
+}
+
+.sidebar-icon {
+    font-size: 16px !important;
+    margin-right: 5px;
+    color: white;
+}
+
+.dashboard-button{
+    box-shadow: none !important;
+    color: white !important;
+}
+.button-active,
+.dashboard-button:hover {
+    color: white  !important;
+    background-color: $primary-blue  !important;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 7px;
+    box-shadow: none !important;
+}
+
+.contact{
+    position: fixed;
+    bottom: 18px;
+}
