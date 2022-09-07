@@ -9,7 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { menu } from './menu-items';
-
+import useAuth from '../../../hooks/useAuth';
 
 
 
@@ -63,6 +63,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 const DrawerLarge = ({ open, handleMenuClick }) => {
+
+    const { admin } = useAuth();
 
     const navigate = useNavigate();
     const handleLogoClick = () => {

@@ -8,12 +8,14 @@ export const menu = [
     {
         name: 'Dashboard',
         icon: DonutSmallRoundedIcon,
-        link: '/dashboard'
+        link: '/dashboard',
+        access: 'admin'
     },
     {
         name: 'Places',
         icon: PaidIcon,
-        link: '/dashboard/manage-places'
+        link: '/dashboard/manage-places',
+        access: 'admin'
     },
     {
         name: 'Packages',
@@ -24,6 +26,7 @@ export const menu = [
         name: 'Bookings',
         icon: MenuBookIcon,
         link: '/',
+        access: 'admin'
     },
     {
         name: 'My Bookings',
@@ -34,21 +37,25 @@ export const menu = [
         name: 'Make Admin',
         icon: PeopleAltIcon,
         link: '/',
+        access: 'admin'
     },
     {
         name: 'Guides',
         icon: PeopleAltIcon,
         link: '/',
+        access: 'admin'
     },
     {
         name: 'Add Hotels',
         icon: PeopleAltIcon,
         link: '/',
+        access: 'admin'
     },
     {
         name: 'Users',
         icon: PeopleAltIcon,
         link: '/',
+        access: 'admin'
     },
     {
         name: 'My Luggage',
