@@ -1,10 +1,14 @@
 import { Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
-import { menu } from './menu-items';
+import { adminMenu, menu } from './menu-items';
 import { useLocation } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const DrawerSmall = ({ handleMenuClick }) => {
+
+    const { firebaseContext } = useAuth();
+    const { admin } = firebaseContext;
 
     const [state, setState] = React.useState({
         top: false,
@@ -21,40 +25,42 @@ const DrawerSmall = ({ handleMenuClick }) => {
 
 
     const list = (anchor) => (
-        <Box
-            className='dark-bg'
-            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-            role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
-        >
-            <List>
-                {menu.map(item => (
-                    <ListItem key={item.name} disablePadding>
-                        <ListItemButton
-                            className='text-white'
-                            onClick={() => handleMenuClick(
-                                item.name === 'Partner' || item.name === 'Resources' ?
-                                    location.pathname : item.link
-                            )}
-                        >
-                            <ListItemIcon
-                                className='text-white'
-                                sx={{
-                                    minWidth: 0,
-                                    justifyContent: 'center',
-                                    mr: 1
-                                }}
-                            >
-                                {<item.icon />}
-                            </ListItemIcon>
-                            <ListItemText primary={item.name} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-
-        </Box>
+      <Box
+        className="dark-bg"
+        sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
+        <List>
+          {(admin ? adminMenu : menu).map((item) => (
+            <ListItem key={item.name} disablePadding>
+              <ListItemButton
+                className="text-white"
+                onClick={() =>
+                  handleMenuClick(
+                    item.name === "Partner" || item.name === "Resources"
+                      ? location.pathname
+                      : item.link
+                  )
+                }
+              >
+                <ListItemIcon
+                  className="text-white"
+                  sx={{
+                    minWidth: 0,
+                    justifyContent: "center",
+                    mr: 1,
+                  }}
+                >
+                  {<item.icon />}
+                </ListItemIcon>
+                <ListItemText primary={item.name} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
     );
 
     return (

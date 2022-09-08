@@ -8,7 +8,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { menu } from './menu-items';
+import { adminMenu, menu } from './menu-items';
 import useAuth from '../../../hooks/useAuth';
 
 
@@ -64,13 +64,16 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 const DrawerLarge = ({ open, handleMenuClick }) => {
 
-    const { admin } = useAuth();
+    const { firebaseContext } = useAuth();
+    const { admin } = firebaseContext;
 
     const navigate = useNavigate();
     const handleLogoClick = () => {
         navigate('/', { replace: true });
     }
     const location = useLocation();
+
+    console.log(admin)
 
     return (
         <Drawer variant="permanent" open={open}>
@@ -81,7 +84,7 @@ const DrawerLarge = ({ open, handleMenuClick }) => {
                 <List>
                     <ListItem disablePadding sx={{ display: 'block' }}>
                         {
-                            menu.map(item => (
+                            (admin ? adminMenu :menu).map(item => (
                                 <div key={item.name}>
 
                                     <ListItemButton

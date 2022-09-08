@@ -1,25 +1,26 @@
-import * as actionTypes from "./action-types"
 import travelAPI from '../base-api';
+import { FETCH_PLACES_FAIL, FETCH_PLACES_START, FETCH_PLACES_SUCCESS } from './action-types';
 
 export const fetchPlacesRequest = () => {
     return {
-        type: actionTypes.FETCH_PLACES_FAIL
+        type: FETCH_PLACES_START
     }
 }
 
 const fetchPlacesSuccess = data => {
     return {
-        type: actionTypes.FETCH_PLACES_SUCCESS,
+        type: FETCH_PLACES_SUCCESS,
         payload: data
     }
 }
 
 const fetchPlacesFail = error => {
     return {
-        type: actionTypes.FETCH_PLACES_FAIL,
+        type: FETCH_PLACES_FAIL,
         payload: error
     }
 }
+
 
 export const fetchPlacesData = () => {
     return (dispatch) => {

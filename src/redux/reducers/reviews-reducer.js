@@ -1,8 +1,4 @@
-import {
-  FETCH_PLACES_FAIL,
-  FETCH_PLACES_START,
-  FETCH_PLACES_SUCCESS,
-} from "../action/action-types";
+import { FETCH_REVIEWS_FAIL, FETCH_REVIEWS_START, FETCH_REVIEWS_SUCCESS } from "../action/action-types";
 
 const initialState = {
   loading: false,
@@ -12,18 +8,18 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_PLACES_START:
+    case FETCH_REVIEWS_START:
       return {
         ...state,
         loading: true,
       };
-    case FETCH_PLACES_SUCCESS:
+    case FETCH_REVIEWS_SUCCESS:
       return {
         loading: false,
         data: action.payload,
         error: "",
       };
-    case FETCH_PLACES_FAIL:
+    case FETCH_REVIEWS_FAIL:
       return {
         loading: false,
         data: [],

@@ -53,7 +53,7 @@ const StyledMenu = styled((props) => (
 const Dropdown = ({ name }) => {
 
     const { firebaseContext } = useAuth();
-    const { logOut } = firebaseContext;
+    const {admin, logOut } = firebaseContext;
 
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -78,43 +78,44 @@ const Dropdown = ({ name }) => {
     }
 
     return (
-        <div>
-            <PrimaryButton
-                bg='transparent'
-                color='white'
-                id="dropdown-btn"
-                aria-controls={open ? 'demo-customized-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                disableElevation
-                onClick={handleClick}
-            >
-                <div className='d-flex align-items-center'>
-                    {name}
-                    <KeyboardArrowDownIcon />
-                </div>
-
-            </PrimaryButton>
-            <StyledMenu
-                id="dropdown-btn"
-                MenuListProps={{
-                    'aria-labelledby': 'dropdown-btn',
-                }}
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-            >
-                <MenuItem onClick={() => handleLinkClick('/dashboard')} disableRipple>
-                    <PersonIcon className='secondary-text' />
-                    My Profile
-                </MenuItem>
-                <MenuItem onClick={handleLogout} disableRipple>
-                    <LoginIcon className='secondary-text' />
-                    Logout
-                </MenuItem>
-
-            </StyledMenu>
-        </div>
+      <div>
+        <PrimaryButton
+          bg="transparent"
+          color="white"
+          id="dropdown-btn"
+          aria-controls={open ? "demo-customized-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          disableElevation
+          onClick={handleClick}
+        >
+          <div className="d-flex align-items-center">
+            {name}
+            <KeyboardArrowDownIcon />
+          </div>
+        </PrimaryButton>
+        <StyledMenu
+          id="dropdown-btn"
+          MenuListProps={{
+            "aria-labelledby": "dropdown-btn",
+          }}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+        >
+          <MenuItem
+            onClick={() => handleLinkClick(admin ? "/dashboard" : "/dashboard/user")}
+            disableRipple
+          >
+            <PersonIcon className="secondary-text" />
+            My Profile
+          </MenuItem>
+          <MenuItem onClick={handleLogout} disableRipple>
+            <LoginIcon className="secondary-text" />
+            Logout
+          </MenuItem>
+        </StyledMenu>
+      </div>
     );
 };
 

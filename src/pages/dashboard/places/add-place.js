@@ -72,7 +72,6 @@ const AddPlace = () => {
 
   return (
     <Box >
-
       <h2 className='mt-3'>Add New Place</h2>
       <Box>
         <form onSubmit={handleSubmit(onSubmit)}>
