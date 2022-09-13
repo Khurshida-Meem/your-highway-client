@@ -5,26 +5,31 @@ import PaidIcon from '@mui/icons-material/Paid';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 
 export const menu = [
-    {
-        name: 'Dashboard',
-        icon: DonutSmallRoundedIcon,
-        link: '/dashboard/user',
-    },
-    {
-        name: 'Packages',
-        icon: SupportAgentIcon,
-        link: '/dashboard/support'
-    },
-    {
-        name: 'My Bookings',
-        icon: PeopleAltIcon,
-        link: '/',
-    },
-    {
-        name: 'My Luggage',
-        icon: PeopleAltIcon,
-        link: '/',
-    },
+  {
+    name: "Dashboard",
+    icon: DonutSmallRoundedIcon,
+    link: "/dashboard/user",
+  },
+  {
+    name: "Packages",
+    icon: SupportAgentIcon,
+    link: "/dashboard/support",
+  },
+  {
+    name: "My Bookings",
+    icon: PeopleAltIcon,
+    link: "/",
+  },
+  {
+    name: "My Luggage",
+    icon: PeopleAltIcon,
+    link: "/",
+  },
+  {
+    name: "My Reviews",
+    icon: PeopleAltIcon,
+    link: "/dashboard/my-reviews",
+  },
 ];
 
 export const adminMenu = [

@@ -2,7 +2,7 @@ import { Box, Container, Grid } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPlacesData } from '../../../redux/action/places-action';
+import { fetchPlacesData } from '../../../redux/places/actions';
 import Place from '../shared/place';
 
 let key = 0;

@@ -117,3 +117,14 @@ body {
 .cursor-pointer {
     cursor: pointer;
 }
+
+.bordered-input {
+    outline: none;
+    border: 2px solid $primary-blue;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.bordered-input:hover{
+    box-shadow: 2px 2px 4px gray;
+}

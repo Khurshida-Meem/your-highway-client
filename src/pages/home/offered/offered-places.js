@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
-import { fetchPlacesData } from '../../../redux/action/places-action';
 import "slick-carousel/slick/slick.css";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick-theme.css";
 import Place from '../shared/place';
+import { fetchPlacesData } from '../../../redux/places/actions';
 
 
 let key = 0;

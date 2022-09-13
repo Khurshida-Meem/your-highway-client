@@ -9,10 +9,10 @@ import Paper from '@mui/material/Paper';
 import { MenuItem, Pagination, Rating, TableHead, TextField, Tooltip } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import usePagination from '../../../hooks/usePagination';
-import { fetchPlacesData } from '../../../redux/action/places-action';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { usePaginationStyle } from '../../../custom-mui-styles';
+import { fetchPlacesData } from '../../../redux/places/actions';
 
 
 const Places = () => {

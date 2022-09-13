@@ -104,7 +104,7 @@ const Dropdown = ({ name }) => {
           onClose={handleClose}
         >
           <MenuItem
-            onClick={() => handleLinkClick(admin ? "/dashboard" : "/dashboard/user")}
+            onClick={() => handleLinkClick(admin ? "/dashboard/admin" : "/dashboard/user")}
             disableRipple
           >
             <PersonIcon className="secondary-text" />

@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
-import placesReducer from "./reducers/places-reducer";
-import reviewsReducer from "./reducers/reviews-reducer";
+import reviewsReducer from "./reviews/reducers";
+import placesReducer from "./places/reducers";
 
 
 const rootReducer = combineReducers({
-    places: placesReducer,
-    reviews: reviewsReducer,
+  places: placesReducer,
+  reviews: reviewsReducer,
 });
 
 export default rootReducer;

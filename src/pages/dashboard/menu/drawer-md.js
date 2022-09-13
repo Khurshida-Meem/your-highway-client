@@ -73,8 +73,6 @@ const DrawerLarge = ({ open, handleMenuClick }) => {
     }
     const location = useLocation();
 
-    console.log(admin)
-
     return (
         <Drawer variant="permanent" open={open}>
             <DrawerHeader className='menu-header'>
