@@ -53,7 +53,9 @@ body {
     border-radius: 7px;
 }
 
-
+.shadow-small {
+    box-shadow: 5px 5px 10px gray !important;
+}
 
 .button {
     cursor: pointer;

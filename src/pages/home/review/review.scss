@@ -1,0 +1,10 @@
+@import '../../../sass/variable.module.scss';
+
+.review {
+    border-left: 2px solid $color-dark;
+transition: 0.3s;
+}
+
+.review:hover {
+    background-color: $light-blue;
+}

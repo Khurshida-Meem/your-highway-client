@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../components/footer';
 import Navbar from '../../components/Navbar';
 import Banner from './Banner';
 import CountryFiltered from './country-based';
@@ -17,6 +18,7 @@ const Home = () => {
             <CountryFiltered />
             <VideoSection />
             <Reviews />
+            <Footer />
         </div>
     );
 };

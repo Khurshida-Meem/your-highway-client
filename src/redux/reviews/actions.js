@@ -4,7 +4,6 @@ import {
   FETCH_REVIEWS_SUCCESS,
 } from "./action-types";
 import travelAPI from "../base-api";
-import { THUNK_SERVER } from "../server";
 
 export const fetchReviewsRequest = () => {
   return {
