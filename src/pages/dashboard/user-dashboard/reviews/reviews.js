@@ -5,15 +5,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchReviewsData } from '../../../../redux/reviews/actions';
 
-const AllReviews = () => {
+const AllReviews = ({data}) => {
 
-    const dispatch = useDispatch();
-    const data = useSelector((state) => state?.reviews?.data);
-
-    useEffect(() => {
-      dispatch(fetchReviewsData());
-    }, [dispatch]);
-
+    
     return (
       <TableContainer className='mt-5' component={Paper}>
         <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">

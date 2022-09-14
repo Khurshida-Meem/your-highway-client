@@ -18,7 +18,8 @@ const Reviews = () => {
   const [star, setStar] = useState(5);
   const reviewsData = useSelector((state) => state?.reviews?.data);
 
-  admin || reviewsData.filter(data => data?.email === user?.email);
+  const filtered = reviewsData.filter(data => data?.email === user?.email);
+ 
   
 
   const {
@@ -45,7 +46,7 @@ const Reviews = () => {
   return (
     <div>
       <div>
-        <div className={admin ? 'd-none' : ''}>
+        <div className={admin ? "d-none" : ""}>
           <h5>Please share your experience with us</h5>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Rating
@@ -81,7 +82,7 @@ const Reviews = () => {
             />
           </form>
         </div>
-        <AllReviews />
+        <AllReviews data={admin ? reviewsData : filtered} />
       </div>
     </div>
   );
