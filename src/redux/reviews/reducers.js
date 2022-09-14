@@ -1,10 +1,13 @@
-import { FETCH_REVIEWS_FAIL, FETCH_REVIEWS_START, FETCH_REVIEWS_SUCCESS } from "./action-types";
+import {
+  FETCH_REVIEWS_FAIL,
+  FETCH_REVIEWS_START,
+  FETCH_REVIEWS_SUCCESS,
+} from "./action-types";
 
 const initialState = {
   loading: false,
   data: [],
   error: "",
-  review: {},
 };
 
 const reducer = (state = initialState, action) => {

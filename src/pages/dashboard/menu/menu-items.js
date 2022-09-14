@@ -75,5 +75,10 @@ export const adminMenu = [
     link: "/",
     access: "admin",
   },
-  
+  {
+    name: "Reviews",
+    icon: PeopleAltIcon,
+    link: "/dashboard/reviews",
+    access: "admin",
+  },
 ];
