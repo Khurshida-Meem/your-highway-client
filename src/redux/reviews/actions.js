@@ -1,27 +1,35 @@
 import {
+  DELETED,
   FETCH_REVIEWS_FAIL,
   FETCH_REVIEWS_START,
   FETCH_REVIEWS_SUCCESS,
 } from "./action-types";
 import travelAPI from "../base-api";
 
-export const fetchReviewsRequest = () => {
+const fetchReviewsRequest = () => {
   return {
     type: FETCH_REVIEWS_START,
   };
 };
 
-export const fetchReviewsSuccess = (data) => {
+const fetchReviewsSuccess = (data) => {
   return {
     type: FETCH_REVIEWS_SUCCESS,
     payload: data,
   };
 };
 
-export const fetchReviewsFail = (error) => {
+const fetchReviewsFail = (error) => {
   return {
     type: FETCH_REVIEWS_FAIL,
     payload: error,
+  };
+};
+
+const deleted = (id) => {
+  return {
+    type: DELETED,
+    payload: id,
   };
 };
 
@@ -53,3 +61,9 @@ export const sendNewReview = (data, reset) => {
   };
 };
 
+export const deleteReview = (id) => {
+  return (dispatch) => {
+    travelAPI.delete(`reviews/${id}`).then(() => dispatch(fetchReviewsData()) );
+    dispatch(deleted(id));
+  };
+};

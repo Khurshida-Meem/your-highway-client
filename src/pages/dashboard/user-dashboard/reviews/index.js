@@ -16,11 +16,10 @@ const Reviews = () => {
   const { firebaseContext } = useAuth();
   const { user, admin } = firebaseContext;
   const [star, setStar] = useState(5);
-  const reviewsData = useSelector((state) => state?.reviews?.data);
 
-  const filtered = reviewsData.filter(data => data?.email === user?.email);
- 
-  
+  useEffect(() => {
+    dispatch(fetchReviewsData());
+  }, [dispatch]);
 
   const {
     register,
@@ -39,10 +38,7 @@ const Reviews = () => {
     dispatch(sendNewReview(rating, reset));
   };
 
-  useEffect(() => {
-    dispatch(fetchReviewsData());
-  }, [dispatch]);
-
+  
   return (
     <div>
       <div>
@@ -82,7 +78,7 @@ const Reviews = () => {
             />
           </form>
         </div>
-        <AllReviews data={admin ? reviewsData : filtered} />
+        <AllReviews />
       </div>
     </div>
   );

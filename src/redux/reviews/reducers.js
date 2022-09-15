@@ -1,4 +1,5 @@
 import {
+  DELETED,
   FETCH_REVIEWS_FAIL,
   FETCH_REVIEWS_START,
   FETCH_REVIEWS_SUCCESS,
@@ -29,6 +30,7 @@ const reducer = (state = initialState, action) => {
         data: [],
         error: action.payload,
       };
+    
     default:
       return state;
   }
