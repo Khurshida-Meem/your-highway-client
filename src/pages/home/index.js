@@ -7,6 +7,7 @@ import Intro from './intro';
 import OfferedServices from './offered';
 import Reviews from './review';
 import VideoSection from './video';
+import WhyChoose from './why-choose';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Navbar />
             <Banner />
             <Intro />
+            <WhyChoose />
             <OfferedServices />
             <CountryFiltered />
             <VideoSection />

@@ -24,7 +24,7 @@ const cards = [
 
 const Intro = () => {
     return (
-        <Container sx={{ mt: 7 }}>
+        <Container sx={{ mt: 7, display: {xs: 'none', md: 'block'} }}>
             <div className="row">
                 <div className="col mt-5 d-flex align-items-center">
                     <div>
