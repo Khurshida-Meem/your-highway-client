@@ -1,9 +1,16 @@
-import { FETCH_PLACES } from "./action-types";
+import { FETCH_PLACES, PLACES_SEARCH } from "./action-types";
 
 export const loaded = (data) => {
   return {
     type: FETCH_PLACES,
     payload: data,
+  };
+};
+
+export const searchKey = (key) => {
+  return {
+    type: PLACES_SEARCH,
+    payload: key,
   };
 };
 

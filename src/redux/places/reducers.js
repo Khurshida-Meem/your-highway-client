@@ -1,4 +1,4 @@
-import { FETCH_PLACES } from "./action-types";
+import { FETCH_PLACES, PLACES_SEARCH } from "./action-types";
 
 const initialState = {
   places: [],
@@ -11,7 +11,12 @@ const reducer = (state = initialState, action) => {
     case FETCH_PLACES:
       return {
         ...state,
-        places: action.payload
+        places: action.payload,
+      };
+    case PLACES_SEARCH:
+      return {
+        ...state,
+        searchKey: action.payload,
       };
     default:
       return state;

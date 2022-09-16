@@ -9,7 +9,9 @@ import Search from "./search";
 
 const Places = () => {
   const dispatch = useDispatch();
-  const placesData = useSelector((state) => state.places?.places);
+  const placesState = useSelector((state) => state.places);
+
+  const { places, searchKey } = placesState;
 
   useEffect(() => {
     dispatch(fetchPlaces);
@@ -22,13 +24,25 @@ const Places = () => {
         <Box className="d-flex justify-content-center">
           <Search />
         </Box>
-        <Box sx={{mt:10}}>
-        <Box sx={{mb: 5}}>
-          <Header title={"Our Served Places"} />
-        </Box>
+        <Box sx={{ mt: 10 }}>
+          <Box sx={{ mb: 5 }}>
+            <Header title={"Our Served Places"} />
+          </Box>
           <Grid container>
-            {placesData?.map((data) => (
-              <Grid xs={12} sm={6} md={4} item id={data?._id}>
+            {places
+            ?.filter(data => {
+              if (searchKey !== null) {
+                return (
+                  data?.destination
+                    .toLowerCase()
+                    .includes(searchKey.toLowerCase()) ||
+                  data?.country.toLowerCase().includes(searchKey.toLowerCase())
+                );
+              }
+              return true;
+            })
+            ?.map((data) => (
+              <Grid xs={12} sm={6} md={4} item key={data?._id}>
                 <Place data={data} />
               </Grid>
             ))}
