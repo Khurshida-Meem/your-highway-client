@@ -20,31 +20,30 @@ const OfferedPlaces = () => {
 
     
     const settings = {
-        dots: true,
-        infinite: true,
-        speed: 1000,
-        autoplaySpeed: 3000,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        autoplay: true,
-        arrows: false,
-        responsive: [
-            
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 500,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-        ]
+      dots: true,
+      infinite: true,
+      speed: 3000,
+      autoplaySpeed: 3000,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplay: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     };
 
     return (

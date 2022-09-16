@@ -130,3 +130,25 @@ body {
 .bordered-input:hover{
     box-shadow: 2px 2px 4px gray;
 }
+
+
+// slider 
+
+.slick-dots li button:before {
+  color: $light-grey !important;
+  font-size: 10px !important;
+  opacity: 100 !important;
+  margin-top: 15px;
+}
+
+li.slick-active > button::before {
+  color: $color-pink !important;
+}
+
+slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: auto !important;
+}
