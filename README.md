@@ -2,7 +2,7 @@
 
 [Live Site](https://your-highway-travel.web.app/).
 
-- Used Redux
+- Used Redux, MUI
 - Admin can add new place
 - User can create, delete and update review
 
