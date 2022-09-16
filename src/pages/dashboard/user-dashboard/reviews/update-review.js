@@ -1,23 +1,40 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  TextField,
+} from "@mui/material";
 import React from "react";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 
-const UpdateReview = () => {
-  const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState("paper");
+const UpdateReview = ({ id, open, handleClose }) => {
+  const reviewsData = useSelector((state) => state?.reviews?.data);
 
-  const handleClickOpen = (scrollType) => {
-    setOpen(true);
-    setScroll(scrollType);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const filtered = reviewsData.filter((data) => data?._id === id);
+  const textField = [
+    {
+      id: "name",
+      label: "Name",
+      value: filtered[0]?.name,
+    },
+    {
+      id: "email",
+      label: "Email",
+      defaultValue: filtered[0]?.email,
+    },
+    {
+      id: "designation",
+      label: "Designation",
+      value: filtered[0]?.designation,
+    },
+    {
+      id: "comment",
+      label: "Comment",
+      value: filtered[0]?.comment,
+    },
+  ];
 
   const descriptionElementRef = React.useRef(null);
   React.useEffect(() => {
@@ -29,39 +46,67 @@ const UpdateReview = () => {
     }
   }, [open]);
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = (data) => {};
+
   return (
-    <div>
-      <Button onClick={handleClickOpen("paper")}>scroll=paper</Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        scroll={scroll}
-        aria-labelledby="scroll-dialog-title"
-        aria-describedby="scroll-dialog-description"
-      >
-        <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-        <DialogContent dividers={scroll === "paper"}>
-          <DialogContentText
-            id="scroll-dialog-description"
-            ref={descriptionElementRef}
-            tabIndex={-1}
-          >
-            {[...new Array(50)]
-              .map(
-                () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-              )
-              .join("\n")}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
-        </DialogActions>
-      </Dialog>
-    </div>
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      scroll={"paper"}
+      aria-labelledby="scroll-dialog-title"
+      aria-describedby="scroll-dialog-description"
+    >
+      <DialogTitle id="scroll-dialog-title">Update</DialogTitle>
+      <DialogContent>
+        <DialogContentText
+          id="scroll-dialog-description"
+          ref={descriptionElementRef}
+          tabIndex={-1}
+        >
+          Hence you are going to update your review. Hope you enjoyed our
+          service.
+        </DialogContentText>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {textField.map((data) => (
+            <div key={data?.id}>
+              <TextField
+                className="my-3"
+                fullWidth
+                defaultValue={data?.value}
+                value={data?.defaultValue}
+                {...register(data.id, { required: true })}
+                label={data.label}
+                variant="outlined"
+                required
+              />
+              {errors[data.id] && (
+                <span className="d-block color-red">
+                  This field is required
+                </span>
+              )}
+            </div>
+          ))}
+
+          <div>
+            <input
+              className="button px-3 py-2 dark-bg me-4"
+              type="submit"
+              value="Update"
+            />
+            <button className="button px-3 py-2 red-bg" onClick={handleClose}>
+              Close
+            </button>
+          </div>
+        </form>
+      </DialogContent>
+    </Dialog>
   );
 };
 

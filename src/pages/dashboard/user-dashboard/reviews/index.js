@@ -2,7 +2,7 @@ import { Rating } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import useAuth from "../../../../hooks/useAuth";
 import {
   fetchReviewsData, sendNewReview,
