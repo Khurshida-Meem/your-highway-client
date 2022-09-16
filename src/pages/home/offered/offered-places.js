@@ -4,18 +4,19 @@ import "slick-carousel/slick/slick.css";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick-theme.css";
 import Place from '../shared/place';
-import { fetchPlacesData } from '../../../redux/places/actions';
+import fetchPlaces from '../../../redux/places/thunk/fetch-places';
 
 
 let key = 0;
 const OfferedPlaces = () => {
 
     const dispatch = useDispatch();
-    const places = useSelector(state => state.places.data)
+    const places = useSelector(state => state.places.places)
     const placesData = places.slice(0, 5);
 
+    console.log(places)
     useEffect(() => {
-        dispatch(fetchPlacesData())
+        dispatch(fetchPlaces)
     }, [dispatch])
 
     

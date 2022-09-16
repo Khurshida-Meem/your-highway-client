@@ -2,7 +2,7 @@ import { Box, Container, Grid } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPlacesData } from '../../../redux/places/actions';
+import fetchPlaces from '../../../redux/places/thunk/fetch-places';
 import Place from '../shared/place';
 
 let key = 0;
@@ -12,14 +12,16 @@ const CountryFiltered = () => {
     
 
     const dispatch = useDispatch();
-    const placesData = useSelector(state => state.places.data);
 
+    useEffect(() => {
+      dispatch(fetchPlaces());
+    }, [dispatch]);
+
+    const placesData = useSelector(state => state.places.places);
 
     const countries = [...new Set(placesData?.map(data => data.country))]
 
-    useEffect(() => {
-        dispatch(fetchPlacesData())
-    }, [dispatch])
+    
 
 
     const initialPlace = placesData.filter(data => data.country === countries[0]);

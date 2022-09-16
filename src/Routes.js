@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Places from './pages/all-places';
 import SignIn from './pages/authentication/sign-in';
 import SignUp from './pages/authentication/sign-up';
 import Dashboard from './pages/dashboard/menu';
@@ -15,6 +16,7 @@ const Main = () => {
                 <Routes>
                     <Route exact path='/' element={<Home />} />
                     <Route path='/home' element={<Home />} />
+                    <Route path='/places' element={<Places />} />
                     <Route path='/sign-in' element={<SignIn />} />
                     <Route path='/sign-up' element={<SignUp />} />
                     <Route path='/packages' element={<PrivateRoute><Packages /></PrivateRoute>} />

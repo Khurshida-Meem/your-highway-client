@@ -12,7 +12,7 @@ import usePagination from '../../../hooks/usePagination';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { usePaginationStyle } from '../../../custom-mui-styles';
-import { fetchPlacesData } from '../../../redux/places/actions';
+import fetchPlaces from '../../../redux/places/thunk/fetch-places';
 
 
 const Places = () => {
@@ -20,12 +20,12 @@ const Places = () => {
     const classes = usePaginationStyle();
     const [defaultPage, setDefaultPage] = useState(1);
     const [rowsPerPage, setRowsPerPage] = useState(5);
-    const placesData = useSelector(state => state?.places?.data);
+    const placesData = useSelector(state => state?.places?.places);
     const data = usePagination(placesData, rowsPerPage);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchPlacesData())
+        dispatch(fetchPlaces())
     }, [dispatch])
 
 
