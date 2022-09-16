@@ -6,6 +6,7 @@ import UserHome from '../dashboard-home/userHome';
 import MakeAdmin from '../make-admin';
 import ManagePlaces from '../places';
 import AddPlace from '../places/add-place';
+import Luggage from '../user-dashboard/luggage';
 import Reviews from '../user-dashboard/reviews';
 
 const NestedRoutes = () => {
@@ -20,6 +21,7 @@ const NestedRoutes = () => {
           }
         />
         <Route path="/user" element={<UserHome />} />
+        <Route path="/luggage" element={<Luggage />} />
         <Route path="/my-reviews" element={<Reviews />} />
         <Route
           path="/manage-places"

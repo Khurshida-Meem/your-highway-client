@@ -23,7 +23,7 @@ export const menu = [
   {
     name: "My Luggage",
     icon: PeopleAltIcon,
-    link: "/",
+    link: "/dashboard/luggage",
   },
   {
     name: "My Reviews",

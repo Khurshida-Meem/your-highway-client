@@ -49,7 +49,6 @@ const AllReviews = () => {
   };
 
   
-
   return (
     <>
       <TableContainer className="mt-5" component={Paper}>
@@ -80,10 +79,10 @@ const AllReviews = () => {
                 <TableCell align="left">{row.email}</TableCell>
                 <TableCell align="left">{row.designation}</TableCell>
                 <TableCell align="left">
+                
                   <Rating
-                    name="half-rating-read"
-                    defaultValue={row.star}
-                    precision={0.5}
+                    name="rating-read"
+                    defaultValue={row?.star}
                     readOnly
                   />
                 </TableCell>

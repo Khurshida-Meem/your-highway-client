@@ -67,3 +67,16 @@ export const deleteReview = (id) => {
     dispatch(deleted(id));
   };
 };
+
+export const updateReview = (id, review) => {
+  return (dispatch) => {
+    travelAPI
+      .put(`reviews/${id}`, {
+        name: review.name,
+        designation: review.designation,
+        comment: review.comment,
+        star: review.star,
+      })
+      .then(() => dispatch(fetchReviewsData()));
+  };
+};

@@ -1,0 +1,53 @@
+@import "../../../../sass/variable.module";
+
+
+.steppers {
+
+  .MuiStepLabel-label {
+    font-family: "Inter", sans-serif !important;
+    color: $color-grey !important;
+    // text-align: left !important;
+    font-weight: 600 !important;
+  }
+
+  @media screen and (max-width: 600px) {
+    .MuiStepLabel-label{
+        font-size: 10px;
+    }
+}
+.MuiStep-root{
+  padding: 0;
+}
+  .MuiSvgIcon-root {
+    color: $color-grey !important;
+  }
+
+  .Mui-active {
+    color: $primary-blue !important;
+
+    .MuiStepConnector-line {
+      border-color: $color-pink !important;
+    }
+  }
+
+  .Mui-completed {
+    color: $color-pink !important;
+
+    .MuiStepConnector-line {
+      border-color: $color-pink !important;
+    }
+  }
+
+  .MuiStepConnector-line {
+    border-top-width: 2px !important;
+    border-color: $color-grey !important;
+  }
+
+  .MuiStepConnector-root {
+    left: calc(-50% + 20px) !important;
+  }
+
+  //   .MuiStepIcon-text {
+  //     fill: transparent;
+  // }
+}

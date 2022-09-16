@@ -3,16 +3,24 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Rating,
   TextField,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updateReview } from "../../../../redux/reviews/actions";
 
 const UpdateReview = ({ id, open, handleClose }) => {
   const reviewsData = useSelector((state) => state?.reviews?.data);
+  const dispatch = useDispatch();
 
   const filtered = reviewsData.filter((data) => data?._id === id);
+
+  const [star, setStar] = useState(null);
+
+  console.log(star, filtered[0]?.star);
+
   const textField = [
     {
       id: "name",
@@ -53,7 +61,13 @@ const UpdateReview = ({ id, open, handleClose }) => {
     reset,
   } = useForm();
 
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    const review = {
+      ...data,
+      star: star === null ? filtered[0]?.star : star,
+    };
+    dispatch(updateReview(id, review));
+  };
 
   return (
     <Dialog
@@ -73,6 +87,14 @@ const UpdateReview = ({ id, open, handleClose }) => {
           Hence you are going to update your review. Hope you enjoyed our
           service.
         </DialogContentText>
+
+        <Rating
+          name="simple-controlled"
+          value={star? star : filtered[0]?.star}
+          onChange={(event, newValue) => {
+            setStar(newValue);
+          }}
+        />
         <form onSubmit={handleSubmit(onSubmit)}>
           {textField.map((data) => (
             <div key={data?.id}>
@@ -95,11 +117,9 @@ const UpdateReview = ({ id, open, handleClose }) => {
           ))}
 
           <div>
-            <input
-              className="button px-3 py-2 dark-bg me-4"
-              type="submit"
-              value="Update"
-            />
+            <button className="button px-3 py-2 dark-bg me-4" type="submit">
+              Update
+            </button>
             <button className="button px-3 py-2 red-bg" onClick={handleClose}>
               Close
             </button>
