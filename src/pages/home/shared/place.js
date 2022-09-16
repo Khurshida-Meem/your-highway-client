@@ -18,18 +18,18 @@ const Place = ({ data }) => {
             <CardMedia
                 component="img"
                 height="160"
-                image={data.thumb}
-                alt={data.destination}
+                image={data?.thumb}
+                alt={data?.destination}
             />
             <CardContent>
-                <h3>{data.destination}</h3>
-                <p><LocationOnIcon sx={{ fontSize: '1.2rem' }} className='pink-color' />{data.country} </p>
+                <h3>{data?.destination}</h3>
+                <p><LocationOnIcon sx={{ fontSize: '1.2rem' }} className='pink-color' />{data?.country} </p>
                 <div className='d-flex justify-content-between'>
-                    <Rating name="read-only" value={data.star} precision={0.5} readOnly />
-                    <p>(<PeopleAltIcon className='primary-text' />{data.starCount})</p>
+                    <Rating name="read-only" value={data?.star} precision={0.5} readOnly />
+                    <p>(<PeopleAltIcon className='primary-text' />{data?.starCount})</p>
                 </div>
                 <div className='d-flex justify-content-between'>
-                    <h3>${data.cost}<span className='h6'>(starting from)</span> </h3>
+                    <h3>${data?.cost}<span className='h6'>(starting from)</span> </h3>
                     <button className='p text-white button pink-bg p-2' onClick={handleClick}>View Details</button>
                 </div>
                 

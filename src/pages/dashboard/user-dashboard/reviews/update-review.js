@@ -58,7 +58,6 @@ const UpdateReview = ({ id, open, handleClose }) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
 
   const onSubmit = (data) => {

@@ -33,6 +33,10 @@ body {
     background-color: $color-red !important;
 }
 
+.grey-bg {
+    background-color: $light-grey;
+}
+
 .pink-color {
     color: $color-pink  !important;
 }
@@ -151,4 +155,8 @@ slick-track {
 
 .slick-slide {
   height: auto !important;
+}
+
+.outline-0 {
+    outline: none;
 }

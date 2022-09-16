@@ -14,7 +14,6 @@ const OfferedPlaces = () => {
     const places = useSelector(state => state.places.places)
     const placesData = places.slice(0, 5);
 
-    console.log(places)
     useEffect(() => {
         dispatch(fetchPlaces)
     }, [dispatch])
