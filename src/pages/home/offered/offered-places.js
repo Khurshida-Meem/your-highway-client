@@ -51,7 +51,7 @@ const OfferedPlaces = () => {
             {
                 placesData?.map(data => (
                     <div key={key++}>
-                        <Place data={data} />
+                        <Place data={data} offered={true} />
                     </div>
                 ))
             }

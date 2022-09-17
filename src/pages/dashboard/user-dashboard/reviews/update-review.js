@@ -19,8 +19,6 @@ const UpdateReview = ({ id, open, handleClose }) => {
 
   const [star, setStar] = useState(null);
 
-  console.log(star, filtered[0]?.star);
-
   const textField = [
     {
       id: "name",

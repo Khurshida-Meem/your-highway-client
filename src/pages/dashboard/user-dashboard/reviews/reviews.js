@@ -73,10 +73,9 @@ const AllReviews = () => {
                 <TableCell align="left">{row.email}</TableCell>
                 <TableCell align="left">{row.designation}</TableCell>
                 <TableCell align="left">
-                
                   <Rating
                     name="rating-read"
-                    defaultValue={row?.star}
+                    defaultValue={parseInt(row?.star)}
                     readOnly
                   />
                 </TableCell>
