@@ -25,7 +25,7 @@ const Places = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchPlaces())
+        dispatch(fetchPlaces)
     }, [dispatch])
 
 
@@ -42,90 +42,85 @@ const Places = () => {
 
 
     return (
-        <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell align='left'>Image</TableCell>
-                        <TableCell align='left'>Place</TableCell>
-                        <TableCell align='left'>Country</TableCell>
-                        <TableCell align='left'>Rating</TableCell>
-                        <TableCell align='left'>Cost</TableCell>
-                        <TableCell align='left'>Actions</TableCell>
-
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {
-                        data.currentData().map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell align="left">
-                                    <img src={row.thumb} alt={row.destination} height='50px' width='100px' />
-
-                                </TableCell>
-                                <TableCell align="left">
-                                    {row.destination}
-                                </TableCell>
-                                <TableCell align="left">
-                                    {row.country}
-                                </TableCell>
-                                <TableCell align="left">
-                                    <Rating name="half-rating-read" defaultValue={row.star} precision={0.5} readOnly />
-
-                                </TableCell>
-                                <TableCell align="left">
-                                    $ {row.cost}
-                                </TableCell>
-                                <TableCell align="left">
-                                    <Tooltip title='Delete'>
-                                        <DeleteIcon className='primary-text cursor-pointer' />
-                                    </Tooltip>
-                                    <Tooltip title='Edit'>
-                                        <EditIcon className='primary-text cursor-pointer' />
-                                    </Tooltip>
-                                    
-                                </TableCell>
-                            </TableRow>
-                        ))}
-
-
-                </TableBody>
-                <TableFooter>
-
-                    <TableRow>
-                        <TableCell colSpan={12}>
-                            <Pagination
-                                classes={{ ul: classes.ul }}
-                                count={data.maxPage}
-                                page={defaultPage}
-                                onChange={handleOnChangePage}
-                                variant="outlined"
-                                shape="rounded" />
-                        </TableCell>
-
-                    </TableRow>
-                    <TableRow>
-                        <TableCell colSpan={12}>
-                            <TextField
-                                size='small'
-                                id="outlined-select-currency"
-                                select
-                                label="Rows"
-                                value={rowsPerPage}
-                                onChange={handleChange}
-                            >
-                                {rows.map((option) => (
-                                    <MenuItem key={option} value={option}>
-                                        {rows.indexOf(option)===3 ? 'All' : option}
-                                    </MenuItem>
-                                ))}
-                            </TextField>
-                        </TableCell>
-
-                    </TableRow>
-                </TableFooter>
-            </Table>
-        </TableContainer>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="left">Image</TableCell>
+              <TableCell align="left">Place</TableCell>
+              <TableCell align="left">Country</TableCell>
+              <TableCell align="left">Rating</TableCell>
+              <TableCell align="left">Cost</TableCell>
+              <TableCell align="left">Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data.currentData().map((row) => (
+              <TableRow key={row._id}>
+                <TableCell align="left">
+                  <img
+                    src={row.thumb}
+                    alt={row.destination}
+                    height="50px"
+                    width="100px"
+                  />
+                </TableCell>
+                <TableCell align="left">{row.destination}</TableCell>
+                <TableCell align="left">{row.country}</TableCell>
+                <TableCell align="left">
+                  <Rating
+                    name="half-rating-read"
+                    defaultValue={parseFloat(row.star)}
+                    precision={0.5}
+                    readOnly
+                  />
+                </TableCell>
+                <TableCell align="left">$ {row.cost}</TableCell>
+                <TableCell align="left">
+                  <Tooltip title="Delete">
+                    <DeleteIcon className="primary-text cursor-pointer" />
+                  </Tooltip>
+                  <Tooltip title="Edit">
+                    <EditIcon className="primary-text cursor-pointer" />
+                  </Tooltip>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TableCell colSpan={12}>
+                <Pagination
+                  classes={{ ul: classes.ul }}
+                  count={data.maxPage}
+                  page={defaultPage}
+                  onChange={handleOnChangePage}
+                  variant="outlined"
+                  shape="rounded"
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell colSpan={12}>
+                <TextField
+                  size="small"
+                  id="outlined-select-currency"
+                  select
+                  label="Rows"
+                  value={rowsPerPage}
+                  onChange={handleChange}
+                >
+                  {rows.map((option) => (
+                    <MenuItem key={option} value={option}>
+                      {rows.indexOf(option) === 3 ? "All" : option}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </TableCell>
+            </TableRow>
+          </TableFooter>
+        </Table>
+      </TableContainer>
     );
 }
 

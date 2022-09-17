@@ -87,7 +87,7 @@ const UpdateReview = ({ id, open, handleClose }) => {
 
         <Rating
           name="simple-controlled"
-          value={star? star : filtered[0]?.star}
+          value={star ? star : filtered[0]?.star}
           onChange={(event, newValue) => {
             setStar(newValue);
           }}
@@ -117,9 +117,9 @@ const UpdateReview = ({ id, open, handleClose }) => {
             <button className="button px-3 py-2 dark-bg me-4" type="submit">
               Update
             </button>
-            <button className="button px-3 py-2 red-bg" onClick={handleClose}>
+            <span className="button px-3 py-2 red-bg" onClick={handleClose}>
               Close
-            </button>
+            </span>
           </div>
         </form>
       </DialogContent>
