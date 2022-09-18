@@ -1,4 +1,4 @@
-import { ADD_PLACE, DELETE_PLACE, FETCH_PLACES, PLACES_SEARCH } from "./action-types";
+import { ADD_PLACE, DELETE_PLACE, FETCH_PLACES, PLACES_SEARCH, UPDATE_PLACE } from "./action-types";
 
 export const loaded = (data) => {
   return {
@@ -17,6 +17,12 @@ export const deleted = (id) => {
   return {
     type: DELETE_PLACE,
     payload: id,
+  }
+}
+export const updated = (id, place) => {
+  return {
+    type: UPDATE_PLACE,
+    payload: {id, place},
   }
 }
 
