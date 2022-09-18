@@ -1,13 +1,18 @@
-import DonutSmallRoundedIcon from '@mui/icons-material/DonutSmallRounded';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import PaidIcon from '@mui/icons-material/Paid';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import PlaceIcon from "@mui/icons-material/Place";
+import BookIcon from "@mui/icons-material/Book";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import KayakingIcon from "@mui/icons-material/Kayaking";
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import StarsIcon from "@mui/icons-material/Stars";
+import LuggageIcon from "@mui/icons-material/Luggage";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 
 export const menu = [
   {
     name: "Dashboard",
-    icon: DonutSmallRoundedIcon,
+    icon: DashboardIcon,
     link: "/dashboard/user",
   },
   {
@@ -22,12 +27,12 @@ export const menu = [
   },
   {
     name: "My Luggage",
-    icon: PeopleAltIcon,
+    icon: LuggageIcon,
     link: "/dashboard/luggage",
   },
   {
     name: "My Reviews",
-    icon: PeopleAltIcon,
+    icon: StarsIcon,
     link: "/dashboard/my-reviews",
   },
 ];
@@ -35,37 +40,37 @@ export const menu = [
 export const adminMenu = [
   {
     name: "Dashboard",
-    icon: DonutSmallRoundedIcon,
+    icon: DashboardIcon,
     link: "/dashboard",
     access: "admin",
   },
   {
     name: "Places",
-    icon: PaidIcon,
+    icon: PlaceIcon,
     link: "/dashboard/manage-places",
     access: "admin",
   },
   {
     name: "Bookings",
-    icon: MenuBookIcon,
+    icon: BookIcon,
     link: "/",
     access: "admin",
   },
   {
     name: "Make Admin",
-    icon: PeopleAltIcon,
+    icon: AdminPanelSettingsIcon,
     link: "/dashboard/make-admin",
     access: "admin",
   },
   {
     name: "Guides",
-    icon: PeopleAltIcon,
+    icon: KayakingIcon,
     link: "/",
     access: "admin",
   },
   {
     name: "Add Hotels",
-    icon: PeopleAltIcon,
+    icon: ApartmentIcon,
     link: "/",
     access: "admin",
   },
@@ -77,7 +82,7 @@ export const adminMenu = [
   },
   {
     name: "Reviews",
-    icon: PeopleAltIcon,
+    icon: StarsIcon,
     link: "/dashboard/reviews",
     access: "admin",
   },
