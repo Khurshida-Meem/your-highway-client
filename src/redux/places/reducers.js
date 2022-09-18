@@ -1,8 +1,13 @@
-import { FETCH_PLACES, PLACES_SEARCH } from "./action-types";
+import {
+  ADD_PLACE,
+  DELETE_PLACE,
+  FETCH_PLACES,
+  PLACES_SEARCH,
+} from "./action-types";
 
 const initialState = {
   places: [],
-  country: 'All',
+  country: "All",
   searchKey: null,
 };
 
@@ -18,6 +23,13 @@ const reducer = (state = initialState, action) => {
         ...state,
         searchKey: action.payload,
       };
+    case ADD_PLACE:
+      return {
+        ...state,
+        places: [...state.places, action.payload],
+      };
+    case DELETE_PLACE:
+      return state.places.filter((place) => place.id !== action.payload);
     default:
       return state;
   }

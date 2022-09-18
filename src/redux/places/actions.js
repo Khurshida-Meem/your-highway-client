@@ -1,4 +1,4 @@
-import { FETCH_PLACES, PLACES_SEARCH } from "./action-types";
+import { ADD_PLACE, DELETE_PLACE, FETCH_PLACES, PLACES_SEARCH } from "./action-types";
 
 export const loaded = (data) => {
   return {
@@ -6,6 +6,19 @@ export const loaded = (data) => {
     payload: data,
   };
 };
+
+export const added = (data) => {
+  return {
+    type: ADD_PLACE,
+    payload: data,
+  }
+}
+export const deleted = (id) => {
+  return {
+    type: DELETE_PLACE,
+    payload: id,
+  }
+}
 
 export const searchKey = (key) => {
   return {
@@ -15,20 +28,3 @@ export const searchKey = (key) => {
 };
 
 
-
-
-// export const fetchPlacesData = () => {
-//   return (dispatch) => {
-//     dispatch(fetchPlacesRequest);
-//     travelAPI
-//       .get("places")
-//       .then((response) => {
-//         const data = response.data;
-//         dispatch(fetchPlacesSuccess(data));
-//       })
-//       .catch((error) => {
-//         const errMsg = error.message;
-//         dispatch(fetchPlacesFail(errMsg));
-//       });
-//   };
-// };
