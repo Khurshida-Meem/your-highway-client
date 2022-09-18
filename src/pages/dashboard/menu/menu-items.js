@@ -54,7 +54,7 @@ export const adminMenu = [
   {
     name: "Make Admin",
     icon: PeopleAltIcon,
-    link: "/",
+    link: "/dashboard/make-admin",
     access: "admin",
   },
   {
