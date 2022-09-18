@@ -29,7 +29,10 @@ const reducer = (state = initialState, action) => {
         places: [...state.places, action.payload],
       };
     case DELETE_PLACE:
-      return state.places.filter((place) => place.id !== action.payload);
+      return {
+        ...state,
+        places: state.places.filter((place) => place._id !== action.payload),
+      }
     default:
       return state;
   }
