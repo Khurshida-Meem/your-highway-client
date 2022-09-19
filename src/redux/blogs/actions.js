@@ -1,4 +1,4 @@
-import { ADD_BLOGS, DELETE_BLOGS, FETCH_BLOGS, UPDATE_BLOGS } from "./action-types";
+import { ADD_BLOGS, APPROVE_BLOG, DELETE_BLOGS, FETCH_BLOGS, UPDATE_BLOGS } from "./action-types";
 
 export const loaded = (data) => {
   return {
@@ -13,6 +13,14 @@ export const added = (data) => {
     payload: data,
   };
 };
+
+export const approved = (id, status) => {
+  return {
+    type: APPROVE_BLOG,
+    payload: {id, status},
+  };
+};
+
 export const deleted = (id) => {
   return {
     type: DELETE_BLOGS,

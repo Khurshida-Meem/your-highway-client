@@ -12,7 +12,7 @@ const addBlog = (blog) => {
     });
     const newBlog = await response.json();
     if (newBlog.insertedId) {
-      alert('new Place added');
+      alert('New blog added');
     }
      dispatch(added(newBlog));
   };

@@ -78,7 +78,7 @@ const AddBlog = () => {
 
   return (
     <Box>
-      <h2 className="mt-3">Create New Blog</h2>
+      <h3 className="mt-2">Create New Blog</h3>
       <Box>
         <form onSubmit={handleSubmit(onSubmit)}>
           {inputs.map((field) => (
@@ -107,6 +107,8 @@ const AddBlog = () => {
                   label={field.label}
                   type={field.type}
                   variant="outlined"
+                  multiline={field.id === 'blog' && true}
+                  rows={field.id === 'blog' && 5}
                   {...register(field.id, { required: true })}
                   error={errors[field.id] && true}
                   helperText={errors[field.id] && "Requires a valid data"}

@@ -1,4 +1,10 @@
-import { ADD_BLOGS, DELETE_BLOGS, FETCH_BLOGS, UPDATE_BLOGS } from "./action-types";
+import {
+  ADD_BLOGS,
+  APPROVE_BLOG,
+  DELETE_BLOGS,
+  FETCH_BLOGS,
+  UPDATE_BLOGS,
+} from "./action-types";
 
 const initialState = {
   blogs: [],
@@ -24,7 +30,21 @@ const reducer = (state = initialState, action) => {
         ...state,
         blogs: state.blogs.filter((blog) => blog._id !== action.payload),
       };
-    
+    case APPROVE_BLOG:
+      const { id, status } = action.payload;
+      return {
+        ...state,
+        blogs: state.blogs.map((data) => {
+          if (data._id !== id) {
+            return data;
+          }
+          return {
+            ...data,
+            status: status,
+          };
+        }),
+      };
+
     default:
       return state;
   }

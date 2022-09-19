@@ -7,7 +7,7 @@ import Navbar from "../../components/Navbar";
 import fetchBlogs from "../../redux/blogs/thunk/fetch-blogs";
 import Header from "../home/shared/header";
 import SingleBlog from "./blog";
-import './blog.scss';
+import "./blog.scss";
 
 const Blogs = () => {
   const blogsData = useSelector((state) => state?.blogs?.blogs);
@@ -28,9 +28,11 @@ const Blogs = () => {
       <Container sx={{ mt: 10 }}>
         <Header title={"Blogs for You"} />
         <div className="mt-3 row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-          {blogsData?.map((data) => (
-            <SingleBlog key={data._id} data={data} />
-          ))}
+          {blogsData
+            ?.filter((blog) => blog.status === "Approved")
+            ?.map((data) => (
+              <SingleBlog key={data._id} data={data} />
+            ))}
         </div>
       </Container>
 
