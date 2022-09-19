@@ -2,6 +2,7 @@ import { ADD_BLOGS, DELETE_BLOGS, FETCH_BLOGS, UPDATE_BLOGS } from "./action-typ
 
 const initialState = {
   blogs: [],
+  blogsByEmail: [],
   category: "All",
   searchKey: null,
 };

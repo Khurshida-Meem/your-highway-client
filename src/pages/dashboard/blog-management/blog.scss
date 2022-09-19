@@ -1,0 +1,22 @@
+@import '../../../sass/variable.module';
+
+.tabs {
+  .MuiButtonBase-root {
+    text-transform: capitalize !important;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .Mui-selected {
+    color: $color-pink !important;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .MuiTabs-indicator {
+    background-color: $color-pink !important;
+    height: 3px !important;
+    bottom: 0;
+    border-radius: 3px;
+  }
+}

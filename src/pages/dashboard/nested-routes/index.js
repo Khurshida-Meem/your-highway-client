@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AdminRoute from '../../../private-routes/admin-route';
+import BlogManagement from '../blog-management';
 import DashboardHome from '../dashboard-home';
 import UserHome from '../dashboard-home/userHome';
 import MakeAdmin from '../make-admin';
@@ -23,6 +24,7 @@ const NestedRoutes = () => {
         <Route path="/user" element={<UserHome />} />
         <Route path="/luggage" element={<Luggage />} />
         <Route path="/my-reviews" element={<Reviews />} />
+        <Route path="/blog" element={<BlogManagement />} />
         <Route
           path="/manage-places"
           element={

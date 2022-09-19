@@ -8,6 +8,7 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import StarsIcon from "@mui/icons-material/Stars";
 import LuggageIcon from "@mui/icons-material/Luggage";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import DescriptionIcon from "@mui/icons-material/Description";
 
 export const menu = [
   {
@@ -34,6 +35,11 @@ export const menu = [
     name: "My Reviews",
     icon: StarsIcon,
     link: "/dashboard/my-reviews",
+  },
+  {
+    name: "Blog",
+    icon: DescriptionIcon,
+    link: "/dashboard/blog",
   },
 ];
 
@@ -85,5 +91,10 @@ export const adminMenu = [
     icon: StarsIcon,
     link: "/dashboard/reviews",
     access: "admin",
+  },
+  {
+    name: "Blog",
+    icon: DescriptionIcon,
+    link: "/dashboard/blog",
   },
 ];
