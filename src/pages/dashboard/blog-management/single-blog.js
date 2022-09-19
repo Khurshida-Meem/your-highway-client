@@ -46,12 +46,13 @@ const SingleBlog = ({ row }) => {
           <Tooltip title="Delete">
             <DeleteIcon onClick={() => handleDelete(row?._id)} className="primary-text cursor-pointer" />
           </Tooltip>
-          <Tooltip title="View">
+          {admin && <Tooltip title="View">
             <VisibilityIcon
               onClick={() => handleClickOpen(row._id)}
               className="primary-text cursor-pointer"
             />
-          </Tooltip>
+          </Tooltip>}
+          
         </TableCell>
       </TableRow>
 
