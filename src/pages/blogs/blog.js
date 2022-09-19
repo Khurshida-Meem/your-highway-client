@@ -5,18 +5,18 @@ const SingleBlog = ({data}) => {
       <div key={data?._id} className="col">
         <div className="card h-100">
           <img
-            src={data?.data?.thumb}
+            src={data?.thumb}
             className="card-img-top"
             alt="..."
             height="180px"
           />
           <div className="card-body">
             <span className="tag px-2 rounded-pill p fw-bold">{data?.category}</span>
-            <h4 className="card-title mt-2">{data?.data?.title}</h4>
-            <p>Sep 19, 2022</p>
+            <h4 className="card-title mt-2">{data?.title}</h4>
+            <p>{data?.date}</p>
 
             <p className="card-text h6 text-black">
-              {(data?.data?.blog).slice(0, 120)}...
+              {(data?.blog).slice(0, 120)}...
             </p>
           </div>
           <div className="card-footer bg-white border-0">

@@ -7,11 +7,11 @@ const SingleBlog = ({ row }) => {
   return (
     <TableRow key={row._id}>
       <TableCell align="left">
-        <img src={row?.data.thumb} alt="Pic" height="50px" width="100px" />
+        <img src={row?.thumb} alt="Pic" height="50px" width="100px" />
       </TableCell>
-      <TableCell align="left">{row?.data.username}</TableCell>
-      <TableCell align="left">{row?.data.email}</TableCell>
-      <TableCell align="left">{row?.data.title}</TableCell>
+      <TableCell align="left">{row?.username}</TableCell>
+      <TableCell align="left">{row?.email}</TableCell>
+      <TableCell align="left">{row?.title}</TableCell>
       <TableCell align="left">{row?.category}</TableCell>
       <TableCell align="left">{row?.status}</TableCell>
       <TableCell align="left">

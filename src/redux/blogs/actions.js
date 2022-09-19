@@ -19,10 +19,10 @@ export const deleted = (id) => {
     payload: id,
   };
 };
-export const updated = (id, place) => {
+export const updated = (id, blog) => {
   return {
     type: UPDATE_BLOGS,
-    payload: { id, place },
+    payload: { id, blog },
   };
 };
 

@@ -17,12 +17,12 @@ const reducer = (state = initialState, action) => {
     case ADD_BLOGS:
       return {
         ...state,
-        blogs: [...state.places, action.payload],
+        blogs: [...state.blogs, action.payload],
       };
     case DELETE_BLOGS:
       return {
         ...state,
-        blogs: state.places.filter((place) => place._id !== action.payload),
+        blogs: state.blogs.filter((blog) => blog._id !== action.payload),
       };
     
     default:

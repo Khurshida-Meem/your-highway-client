@@ -2,7 +2,8 @@ import { Box, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import addPlace from "../../../redux/places/thunk/add-place";
+import useAuth from "../../../hooks/useAuth";
+import addBlog from "../../../redux/blogs/thunk/add-blog";
 
 const inputs = [
   {
@@ -40,10 +41,12 @@ const inputs = [
 
 const AddBlog = () => {
   const dispatch = useDispatch();
-  const [age, setAge] = React.useState("");
+  const [category, setCategory] = React.useState("");
+  const { firebaseContext } = useAuth();
+  const { user } = firebaseContext;
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setCategory(event.target.value);
   };
 
   const {
@@ -54,7 +57,22 @@ const AddBlog = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
+    const views = Math.floor(Math.random() * 10000);
+    let text = (new Date()).toDateString().split(" ");
+    const date = text[1] + " " + text[2] + ", " + text[3];
+    const status = "Pending";
+    const email = user?.email;
+
+    const blog = {
+      ...data,
+      category,
+      date,
+      views,
+      status,
+      email,
+      comments: [],
+    };
+    dispatch(addBlog(blog));
     reset();
   };
 
@@ -67,18 +85,20 @@ const AddBlog = () => {
             <Box key={field.id}>
               {field.id === "category" ? (
                 <FormControl className="mt-3 w-50">
-                  <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                  <InputLabel id="demo-simple-select-label">
+                    {field.label}
+                  </InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={age}
-                    label="Age"
+                    value={category}
+                    label={field.label}
                     onChange={handleChange}
-                    {...register(field.id)}
                   >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value={"Tips"}>Tips</MenuItem>
+                    <MenuItem value={"Travel"}>Travel</MenuItem>
+                    <MenuItem value={"Entertainment"}>Entertainment</MenuItem>
+                    <MenuItem value={"News"}>News</MenuItem>
                   </Select>
                 </FormControl>
               ) : (
