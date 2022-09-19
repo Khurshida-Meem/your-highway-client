@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Places from './pages/all-places';
 import SignIn from './pages/authentication/sign-in';
 import SignUp from './pages/authentication/sign-up';
+import Blogs from './pages/blogs';
 import Dashboard from './pages/dashboard/menu';
 import Home from './pages/home';
 import SinglePlace from './pages/home/shared/single-place';
@@ -33,6 +34,14 @@ const Main = () => {
               element={
                 <PrivateRoute>
                   <Packages />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/blogs"
+              element={
+                <PrivateRoute>
+                  <Blogs />
                 </PrivateRoute>
               }
             />

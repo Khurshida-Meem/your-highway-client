@@ -1,0 +1,28 @@
+import { ADD_BLOGS, DELETE_BLOGS, FETCH_BLOGS, UPDATE_BLOGS } from "./action-types";
+
+export const loaded = (data) => {
+  return {
+    type: FETCH_BLOGS,
+    payload: data,
+  };
+};
+
+export const added = (data) => {
+  return {
+    type: ADD_BLOGS,
+    payload: data,
+  };
+};
+export const deleted = (id) => {
+  return {
+    type: DELETE_BLOGS,
+    payload: id,
+  };
+};
+export const updated = (id, place) => {
+  return {
+    type: UPDATE_BLOGS,
+    payload: { id, place },
+  };
+};
+
