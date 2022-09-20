@@ -5,3 +5,16 @@
     color: $color-pink !important;
     padding: 4px 0;
 }
+
+.blog-banner-inset{
+    background-color: rgba(0, 0, 0, 0.559);
+    height: 60vh;
+}
+
+.blog-banner{
+    background-image: url('../../assets/blog-banner.png');
+    height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}

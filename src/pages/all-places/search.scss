@@ -3,3 +3,16 @@
 .border-search  {
     border: 1px solid $color-dark;
 }
+
+.places-banner-inset{
+    background-color: rgba(0, 0, 0, 0.559);
+    height: 50vh;
+}
+
+.places-banner{
+    background-image: url('../../assets/summertime-background-img-2.jpg');
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}

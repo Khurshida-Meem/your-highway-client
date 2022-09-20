@@ -8,7 +8,7 @@ const comments = [
   {
     id: 1,
     img: peep1,
-    name: "Random",
+    name: "Khurshida",
     comment:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, obcaecati?",
     date: "December 17, 2021",
@@ -16,7 +16,7 @@ const comments = [
   {
     id: 2,
     img: peep2,
-    name: "Annonymous",
+    name: "Tamanna",
     comment:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, obcaecati?",
     date: "March 24, 2022",
@@ -24,7 +24,7 @@ const comments = [
   {
     id: 3,
     img: peep3,
-    name: "Ami k",
+    name: "Bithi",
     comment:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, obcaecati?",
     date: "June 17, 2022",

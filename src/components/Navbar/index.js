@@ -17,18 +17,14 @@ const pages = [
         link: '/',
     },
     {
-        name: 'Places',
+        name: 'Destinations',
         link: '/places',
     },
     {
         name: 'Blogs',
         link: '/blogs',
     },
-    {
-        name: 'Packages',
-        link: '/packages',
-    },
-
+    
 ]
 
 const Navbar = () => {

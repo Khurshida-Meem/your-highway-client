@@ -1,6 +1,7 @@
 import { Box, Container, Grid } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Footer from "../../components/footer";
 import Navbar from "../../components/Navbar";
 import fetchPlaces from "../../redux/places/thunk/fetch-places";
 import Header from "../home/shared/header";
@@ -20,35 +21,43 @@ const Places = () => {
   return (
     <div>
       <Navbar />
+      <div className="places-banner">
+        <div className="places-banner-inset ">
+          <Container sx={{pt:10}}>
+            <p className='text-white h5'>CHOOSE YOUR DESTINATION</p>
+            <h1 className="text-white display-2">Our Served Destinations</h1>
+          </Container>
+        </div>
+      </div>
       <Container>
-        <Box className="d-flex justify-content-center">
+        <Box>
           <Search />
         </Box>
-        <Box sx={{ mt: 10 }}>
-          <Box sx={{ mb: 5 }}>
-            <Header title={"Our Served Places"} />
-          </Box>
+        <Box sx={{ mt: 5 }}>
           <Grid container>
             {places
-            ?.filter(data => {
-              if (searchKey !== null) {
-                return (
-                  data?.destination
-                    .toLowerCase()
-                    .includes(searchKey.toLowerCase()) ||
-                  data?.country.toLowerCase().includes(searchKey.toLowerCase())
-                );
-              }
-              return true;
-            })
-            ?.map((data) => (
-              <Grid xs={12} sm={6} md={4} item key={data?._id}>
-                <Place data={data} />
-              </Grid>
-            ))}
+              ?.filter((data) => {
+                if (searchKey !== null) {
+                  return (
+                    data?.destination
+                      .toLowerCase()
+                      .includes(searchKey.toLowerCase()) ||
+                    data?.country
+                      .toLowerCase()
+                      .includes(searchKey.toLowerCase())
+                  );
+                }
+                return true;
+              })
+              ?.map((data) => (
+                <Grid xs={12} sm={6} md={4} item key={data?._id}>
+                  <Place data={data} />
+                </Grid>
+              ))}
           </Grid>
         </Box>
       </Container>
+      <Footer />
     </div>
   );
 };

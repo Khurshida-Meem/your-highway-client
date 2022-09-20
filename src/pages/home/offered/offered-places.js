@@ -50,7 +50,7 @@ const OfferedPlaces = () => {
         <Slider {...settings}>
             {
                 placesData?.map(data => (
-                    <div key={key++}>
+                    <div className='mt-3' key={key++}>
                         <Place data={data} offered={true} />
                     </div>
                 ))

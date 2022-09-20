@@ -6,6 +6,8 @@ import useAuth from "../../../hooks/useAuth";
 import ApproveBlog from "./approve-blog";
 import { useDispatch } from "react-redux";
 import deleteBlog from "../../../redux/blogs/thunk/delete-blog";
+import EditIcon from "@mui/icons-material/Edit";
+
 
 const SingleBlog = ({ row }) => {
 
@@ -44,15 +46,27 @@ const SingleBlog = ({ row }) => {
         <TableCell align="left">{row?.status}</TableCell>
         <TableCell align="left">
           <Tooltip title="Delete">
-            <DeleteIcon onClick={() => handleDelete(row?._id)} className="primary-text cursor-pointer" />
-          </Tooltip>
-          {admin && <Tooltip title="View">
-            <VisibilityIcon
-              onClick={() => handleClickOpen(row._id)}
+            <DeleteIcon
+              onClick={() => handleDelete(row?._id)}
               className="primary-text cursor-pointer"
             />
-          </Tooltip>}
-          
+          </Tooltip>
+          {admin && (
+            <Tooltip title="View">
+              <VisibilityIcon
+                onClick={() => handleClickOpen(row._id)}
+                className="primary-text cursor-pointer"
+              />
+            </Tooltip>
+          )}
+          {admin || (
+            <Tooltip title="Edit">
+              <EditIcon
+                onClick={() => handleClickOpen(row._id)}
+                className="primary-text cursor-pointer"
+              />
+            </Tooltip>
+          )}
         </TableCell>
       </TableRow>
 

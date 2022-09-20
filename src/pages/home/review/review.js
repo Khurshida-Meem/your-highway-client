@@ -4,6 +4,8 @@ import './review.scss';
 import variables from '../../../sass/_variable.module.scss';
 
 const Review = ({ data }) => {
+
+  console.log(data)
   return (
     <Card className="mx-2 my-2 review shadow-small">
       <CardContent>
@@ -12,7 +14,7 @@ const Review = ({ data }) => {
           {data?.img ? (
             <img
               className="rounded-circle"
-              src={data.img}
+              src={data?.img}
               alt=""
               width="40px"
             />

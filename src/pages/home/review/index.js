@@ -13,6 +13,8 @@ const Reviews = () => {
     const dispatch = useDispatch();
     const reviews = useSelector(state => state.reviews?.data);
 
+    console.log(reviews);
+
     useEffect(() => {
       dispatch(fetchReviewsData());
     }, [dispatch]);
@@ -46,7 +48,7 @@ const Reviews = () => {
     return (
       <div>
       <Container sx={{mt:15}}>
-      <Header title={"Top Testimonials"} />
+      <Header title={"Our Reviews"} />
         <Slider {...settings}>
         {
             reviews?.map(data => <Review key={data._id} data={data} />)
