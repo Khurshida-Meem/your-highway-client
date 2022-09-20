@@ -5,27 +5,25 @@ import variables from '../../../sass/_variable.module.scss';
 
 const Review = ({ data }) => {
 
-  console.log(data)
   return (
-    <Card className="mx-2 my-2 review shadow-small">
+    <div className="mx-2 mt-5 mb-2 review shadow-small">
+      <div className="d-flex justify-content-center mb-2">
+        {data?.img ? (
+          <img
+            className="rounded-circle review-img"
+            src={data?.img}
+            alt=""
+            width="90px"
+          />
+        ) : (
+          <Avatar
+            className="review-img"
+            sx={{ bgcolor: variables.colorDark, width: "90px", height: "90px" }}
+            alt={data?.name}
+          />
+        )}
+      </div>
       <CardContent>
-        <p className="text-center">- &nbsp; TESTIMONIAL &nbsp; -</p>
-        <div className="d-flex justify-content-center my-2">
-          {data?.img ? (
-            <img
-              className="rounded-circle"
-              src={data?.img}
-              alt=""
-              width="40px"
-            />
-          ) : (
-            <Avatar
-              sx={{ bgcolor: variables.colorDark }}
-              alt={data?.name}
-              src="/broken-image.jpg"
-            />
-          )}
-        </div>
         <div className="d-flex justify-content-center">
           <Rating name="read-only" value={data.star} readOnly />
         </div>
@@ -33,13 +31,13 @@ const Review = ({ data }) => {
 
         <p className="text-center">{data.comment}</p>
         <div className="mt-2 d-flex align-items-center justify-content-end">
-          <div className="me-2">
+          <div className="me-4">
             <h6>{data?.name}</h6>
             <p>{data.designation}</p>
           </div>
         </div>
       </CardContent>
-    </Card>
+    </div>
   );
 };
 

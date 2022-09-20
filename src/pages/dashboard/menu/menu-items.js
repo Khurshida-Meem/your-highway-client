@@ -75,9 +75,9 @@ export const adminMenu = [
     access: "admin",
   },
   {
-    name: "Add Hotels",
+    name: "Hotels",
     icon: ApartmentIcon,
-    link: "/",
+    link: "/dashboard/hotels",
     access: "admin",
   },
   {

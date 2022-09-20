@@ -10,12 +10,14 @@
     border: 2px solid white;
     border-radius: 50px;
     transition: 0.3s;
+    font-weight: 500;
 }
 
 .link:hover{
     background-color: white;
     color: $color-dark;
 }
+
 
 .border{
     border-left: 3px solid $color-pink !important;

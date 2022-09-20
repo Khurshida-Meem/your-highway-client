@@ -7,8 +7,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import WidgetsIcon from '@mui/icons-material/Widgets';
+import { pages } from './menu-items';
+import { useNavigate } from 'react-router-dom';
 
 const MobileMenu = () => {
+
+    const navigate = useNavigate();
     const [state, setState] = React.useState({
         top: false,
     });
@@ -21,24 +25,27 @@ const MobileMenu = () => {
         setState({ ...state, [anchor]: open });
     };
 
-    const list = (anchor) => (
-        <Box
-            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-            role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
-        >
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton className='border ms-3 mt-2'>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
+    const handleClick = link => {
+navigate(link, { replace: true });
+    }
 
-        </Box>
+    const list = (anchor) => (
+      <Box
+        sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
+        <List>
+          {pages.map((text, index) => (
+            <ListItem key={text.name} disablePadding>
+              <ListItemButton onClick={() => handleClick(text.link)} className="border ms-3 mt-2">
+                <ListItemText primary={text.name} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
     );
 
     return (

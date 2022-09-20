@@ -41,6 +41,10 @@ body {
     background-color: $light-grey;
 }
 
+.light-grey-bg {
+    background-color: $lighter-grey;
+}
+
 .pink-color {
     color: $color-pink  !important;
 }
@@ -162,7 +166,7 @@ li.slick-active > button::before {
   color: $color-pink !important;
 }
 
-slick-track {
+.slick-track {
   display: flex !important;
 }
 
@@ -173,3 +177,6 @@ slick-track {
 .outline-0 {
     outline: none;
 }
+
+
+

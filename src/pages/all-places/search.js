@@ -20,10 +20,10 @@ const Search = () => {
     };
 
     return (
-      <Box className="mt-5 border-search grey-bg w-50 d-flex">
+      <Box className="mt-5 border-search light-grey-bg w-50 d-flex">
         <img className="ps-2" src={searchImg} alt="" />
         <input
-          className="w-100 grey-bg border-0 outline-0 px-3 py-2"
+          className="w-100 light-grey-bg border-0 outline-0 px-3 py-2"
           type="search"
           name="search"
           placeholder="Enter your Destination"

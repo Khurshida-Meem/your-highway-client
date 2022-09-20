@@ -6,6 +6,7 @@ import AddBlog from '../blog-management/add-blog';
 import AllBlogs from '../blog-management/all-blogs';
 import DashboardHome from '../dashboard-home';
 import UserHome from '../dashboard-home/userHome';
+import ManageHotels from '../hotel-management';
 import MakeAdmin from '../make-admin';
 import ManagePlaces from '../places';
 import AddPlace from '../places/add-place';
@@ -68,6 +69,15 @@ const NestedRoutes = () => {
             <AdminRoute>
               {" "}
               <Reviews />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/hotels"
+          element={
+            <AdminRoute>
+              {" "}
+              <ManageHotels />
             </AdminRoute>
           }
         />

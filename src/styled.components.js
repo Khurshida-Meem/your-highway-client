@@ -32,3 +32,11 @@ background-position:center;
   transform: scale(1.2);
   }
 `
+
+export const BannerBg = styled.div`
+  background: ${(props) =>
+    `url(${props.background}) no-repeat center`};
+  height: 60vh;
+  background-size: cover;
+  
+`; 

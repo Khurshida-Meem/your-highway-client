@@ -23,8 +23,8 @@ const Places = () => {
       <Navbar />
       <div className="places-banner">
         <div className="places-banner-inset ">
-          <Container sx={{pt:10}}>
-            <p className='text-white h5'>CHOOSE YOUR DESTINATION</p>
+          <Container sx={{ pt: 10 }}>
+            <p className="text-white h5">CHOOSE YOUR DESTINATION</p>
             <h1 className="text-white display-2">Our Served Destinations</h1>
           </Container>
         </div>
@@ -34,7 +34,7 @@ const Places = () => {
           <Search />
         </Box>
         <Box sx={{ mt: 5 }}>
-          <Grid container>
+          <Grid container spacing={3}>
             {places
               ?.filter((data) => {
                 if (searchKey !== null) {

@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import Footer from "../../../components/footer";
 import Navbar from "../../../components/Navbar";
 import { THUNK_SERVER } from "../../../redux/server";
+import { BannerBg } from "../../../styled.components";
 import Comment from "./comment";
 
 const SinglePlace = () => {
@@ -26,10 +27,18 @@ const SinglePlace = () => {
   return (
     <div>
       <Navbar />
+      <BannerBg background={`${thumb}`}>
+        <div className="banner-inset ">
+          <Container sx={{ pt: 10 }}>
+            <h1 className="display-3 text-white">{destination}</h1>
+            <h1 className="display-6 text-white">{country}</h1>
+          </Container>
+        </div>
+      </BannerBg>
       <Container sx={{ mt: 5 }}>
         <Box sx={{ display: { sm: "flex" } }}>
           <div>
-            <img className="rounded" src={thumb} alt="" width='300px' />
+            <img className="rounded" src={thumb} alt="" width="300px" />
             <div className="mt-2">
               <Rating
                 name="read-only"
@@ -41,8 +50,6 @@ const SinglePlace = () => {
             </div>
           </div>
           <div className="mx-3">
-            <h3>{destination}</h3>
-            <h5>{country}</h5>
             <p>{description}</p>
           </div>
         </Box>
