@@ -12,8 +12,6 @@ const Reviews = () => {
   const dispatch = useDispatch();
   const reviews = useSelector((state) => state.reviews?.data);
 
-  console.log(reviews);
-
   useEffect(() => {
     dispatch(fetchReviewsData());
   }, [dispatch]);

@@ -7,6 +7,8 @@ import Footer from "../../../components/footer";
 import Navbar from "../../../components/Navbar";
 import { THUNK_SERVER } from "../../../redux/server";
 import { BannerBg } from "../../../styled.components";
+import Hotels from "../../hotels";
+import { hotels } from "../../hotels/db";
 import Comment from "./comment";
 
 const SinglePlace = () => {
@@ -15,6 +17,8 @@ const SinglePlace = () => {
 
   const { destination, country, thumb, description, cost, star, starCount } =
     place;
+
+  console.log(hotels);
 
   useEffect(() => {
     (async () => {
@@ -53,6 +57,7 @@ const SinglePlace = () => {
             <p>{description}</p>
           </div>
         </Box>
+        <Hotels />
         <Divider sx={{ mt: 3 }} />
         <Comment />
       </Container>
@@ -62,3 +67,7 @@ const SinglePlace = () => {
 };
 
 export default SinglePlace;
+
+
+// Find your next stay
+// Search low prices on hotels, homes and much more...

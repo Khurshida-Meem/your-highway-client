@@ -11,17 +11,18 @@ import WhyChoose from './why-choose';
 const Home = () => {
 
     return (
-        <div>
-            <Navbar />
-            <Banner />
-            <Intro />
-            <WhyChoose />
-            <OfferedServices />
-            {/* <CountryFiltered /> */}
-            <VideoSection />
-            <Reviews />
-            <Footer />
-        </div>
+      <div>
+        <Navbar />
+        <Banner />
+        <Intro />
+
+        <OfferedServices />
+        <WhyChoose />
+        {/* <CountryFiltered /> */}
+        <VideoSection />
+        <Reviews />
+        <Footer />
+      </div>
     );
 };
 

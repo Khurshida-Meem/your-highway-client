@@ -25,9 +25,14 @@ const OfferedServices = () => {
     return (
       <Container sx={{ mt: 20 }}>
         <Grid container>
-          <Grid className='mt-3' sx={{ display: { xs: "none", md: "block" } }} item sm={4}>
+          <Grid
+            className="mt-3"
+            sx={{ display: { xs: "none", md: "block" } }}
+            item
+            sm={4}
+          >
             <Box className="w-100 radius-7">
-              <img className="img-fluid" src={img} alt="" />
+              <img className="img-fluid rounded-card" src={img} alt="" />
             </Box>
             <Box
               sx={{ mt: "-300px", display: "flex", justifyContent: "center" }}

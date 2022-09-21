@@ -15,7 +15,7 @@ const Place = ({ data, offered }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345, mr: 2 }}>
+    <Card className="rounded-card" sx={{ maxWidth: 345, mr: 2 }}>
       <CardMedia
         component="img"
         height="160"
@@ -46,7 +46,7 @@ const Place = ({ data, offered }) => {
             <span className="h6">(starting from)</span>{" "}
           </h3>
           <button
-            className="p text-white button pink-bg p-2"
+            className="p rounded-pill text-white button pink-bg py-2 px-3"
             onClick={() => handleClick(data?._id)}
           >
             View Details

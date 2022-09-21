@@ -1,0 +1,228 @@
+export const hotels = [
+  {
+    hotel_name: "la la la",
+    country: "Bangladesh",
+    place: "St. Martin's Island",
+    img: "https://pix10.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768",
+    available_rooms: [
+      {
+        type: "Single Bed",
+        stay_cost_half: 20,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBO4NQc1-IYOmumhQJN1_LmdAhsEnikUHJjQ&usqp=CAU",
+      },
+      {
+        type: "Double Bed",
+        stay_cost_half: 40,
+        img: "https://www.etravelweek.com/sites/default/files/inline-images/double%20room.jpg",
+      },
+    ],
+    features: [
+      {
+        name: "Gym",
+        img: "https://artimg.gympik.com/articles/wp-content/uploads/2019/10/Featured.jpg",
+      },
+      {
+        name: "Swimming",
+        img: "https://media.istockphoto.com/photos/poolside-view-of-tropical-pool-surrounded-by-palm-trees-picture-id92284292?k=20&m=92284292&s=612x612&w=0&h=X3lGNDn7fN_VyOQFuJJ2eRvUkTFpqb5T_jBhM2wqkOw=",
+      },
+      {
+        name: "Buffet Breakfast",
+        img: "https://1.bp.blogspot.com/--vvifVfgFXE/VWCYFGtGglI/AAAAAAAABpw/Ly-hlUI0ZR4/s1600/buffet.jpg",
+      },
+    ],
+    meals: {
+      breakfast: [
+        {
+          name: "Bagel and cream cheese",
+          thumb: "https://i.ibb.co/BKXXYTR/breakfast1.png",
+          price: 6.99,
+          rating: 4.7,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Breakfasr sandwich",
+          thumb: "https://i.ibb.co/GvTmFcG/breakfast2.png",
+          price: 9.99,
+          rating: 4.8,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Baked Chicken",
+          thumb: "https://i.ibb.co/3537H0H/breakfast3.png",
+          price: 10.99,
+          rating: 5,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        
+      ],
+      lunch: [
+        {
+          name: "Healthy Meal Plan",
+          thumb: "https://i.ibb.co/Hzjh1qD/lunch1.png",
+          price: 23.99,
+          rating: 4.8,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Fried Chicken Bento",
+          thumb: "https://i.ibb.co/RbkWQHz/lunch2.png",
+          price: 9.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Tarragon Rubbed Salmon",
+          thumb: "https://i.ibb.co/kH1xcCN/lunch3.png",
+          price: 6.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        
+      ],
+      dinner: [
+        {
+          name: "Salmon with Grape-Lentil Salad",
+          thumb: "https://i.ibb.co/GVyTGNN/dinner1.png",
+          price: 9.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicingelit. Velit distinctio voluptas quis saepe aliquid, quidem eosminus fugit? Voluptatum praesentium esse ad officia quas illum!Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Lemony Salmon Piccata",
+          thumb: "https://i.ibb.co/G3FtX00/dinner2.png",
+          price: 10.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicingelit. Velit distinctio voluptas quis saepe aliquid, quidem eosminus fugit? Voluptatum praesentium esse ad officia quas illum!Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Chicken Tenderloin",
+          thumb: "https://i.ibb.co/x55WJ3g/dinner3.png",
+          price: 12.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicingelit. Velit distinctio voluptas quis saepe aliquid, quidem eosminus fugit? Voluptatum praesentium esse ad officia quas illum!Adipisci vero labore fugiat beatae?",
+        },
+      ],
+    },
+  },
+  {
+    hotel_name: "Da Da Da",
+    country: "Bangladesh",
+    place: "St. Martin's Island",
+    img: "https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg",
+    available_rooms: [
+      {
+        type: "Single Bed",
+        stay_cost_half: 20,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBO4NQc1-IYOmumhQJN1_LmdAhsEnikUHJjQ&usqp=CAU",
+      },
+      {
+        type: "Double Bed",
+        stay_cost_half: 40,
+        img: "https://www.etravelweek.com/sites/default/files/inline-images/double%20room.jpg",
+      },
+    ],
+    features: [
+      {
+        name: "Gym",
+        img: "https://artimg.gympik.com/articles/wp-content/uploads/2019/10/Featured.jpg",
+      },
+      {
+        name: "Swimming",
+        img: "https://media.istockphoto.com/photos/poolside-view-of-tropical-pool-surrounded-by-palm-trees-picture-id92284292?k=20&m=92284292&s=612x612&w=0&h=X3lGNDn7fN_VyOQFuJJ2eRvUkTFpqb5T_jBhM2wqkOw=",
+      },
+      {
+        name: "Buffet Breakfast",
+        img: "https://1.bp.blogspot.com/--vvifVfgFXE/VWCYFGtGglI/AAAAAAAABpw/Ly-hlUI0ZR4/s1600/buffet.jpg",
+      },
+    ],
+    meals: {
+      breakfast: [
+        {
+          name: "Eggs Benedict",
+          thumb: "https://i.ibb.co/JCzDQy5/breakfast4.png",
+          price: 8.99,
+          rating: 4.4,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Toast Croissant Fried Egg",
+          thumb: "https://i.ibb.co/qdcbK8R/breakfast5.png",
+          price: 19.99,
+          rating: 4.8,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Fried Egg Toast Brunch",
+          thumb: "https://i.ibb.co/wgR0W4K/breakfast6.png",
+          price: 3.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+      ],
+      lunch: [
+        {
+          name: "Indian Lunch",
+          thumb: "https://i.ibb.co/c6P1R89/lunch4.png",
+          price: 8.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Beef Steak",
+          thumb: "https://i.ibb.co/3vw74xV/lunch5.png",
+          price: 15.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Honey Soy Glazzed Salmon",
+          thumb: "https://i.ibb.co/p0NLk1b/lunch6.png",
+          price: 7.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit distinctio voluptas quis saepe aliquid, quidem eos minus fugit? Voluptatum praesentium esse ad officia quas illum! Adipisci vero labore fugiat beatae?",
+        },
+      ],
+      dinner: [
+        {
+          name: "French Fries with Cheese",
+          thumb: "https://i.ibb.co/37r3Gg4/dinner4.png",
+          price: 8.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicingelit. Velit distinctio voluptas quis saepe aliquid, quidem eosminus fugit? Voluptatum praesentium esse ad officia quas illum!Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Garlic Butter Backed Salmon",
+          thumb: "https://i.ibb.co/HDDvv8d/dinner5.png",
+          price: 6.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicingelit. Velit distinctio voluptas quis saepe aliquid, quidem eosminus fugit? Voluptatum praesentium esse ad officia quas illum!Adipisci vero labore fugiat beatae?",
+        },
+        {
+          name: "Backed Chicken",
+          thumb: "https://i.ibb.co/ssZjTQ3/dinner6.png",
+          price: 9.99,
+          rating: 4.9,
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicingelit. Velit distinctio voluptas quis saepe aliquid, quidem eosminus fugit? Voluptatum praesentium esse ad officia quas illum!Adipisci vero labore fugiat beatae?",
+        },
+      ],
+    },
+  },
+];

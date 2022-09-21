@@ -7,6 +7,8 @@ import Blogs from './pages/blogs';
 import Dashboard from './pages/dashboard/menu';
 import Home from './pages/home';
 import SinglePlace from './pages/home/shared/single-place';
+import Hotels from './pages/hotels';
+import SingleHotel from './pages/hotels/single-hotel';
 import Packages from './pages/tour-packages';
 import PrivateRoute from './private-routes';
 
@@ -24,6 +26,22 @@ const Main = () => {
               element={
                 <PrivateRoute>
                   <SinglePlace />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/hotels/:hotelId"
+              element={
+                <PrivateRoute>
+                  <SingleHotel />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/hotels"
+              element={
+                <PrivateRoute>
+                  <Hotels />
                 </PrivateRoute>
               }
             />

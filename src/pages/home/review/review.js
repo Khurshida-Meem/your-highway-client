@@ -1,4 +1,4 @@
-import { Avatar, Card, CardContent, Rating } from "@mui/material";
+import { Avatar, CardContent, Rating } from "@mui/material";
 import React from "react";
 import './review.scss';
 import variables from '../../../sass/_variable.module.scss';
@@ -13,12 +13,12 @@ const Review = ({ data }) => {
             className="rounded-circle review-img"
             src={data?.img}
             alt=""
-            width="90px"
+            width="120px"
           />
         ) : (
           <Avatar
             className="review-img"
-            sx={{ bgcolor: variables.colorDark, width: "90px", height: "90px" }}
+            sx={{ bgcolor: variables.colorDark, width: "120px", height: "120px" }}
             alt={data?.name}
           />
         )}

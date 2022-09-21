@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import React from "react";
-import peep1 from "../../../assets/user-img-1.png";
-import peep2 from "../../../assets/user-img-2.png";
-import peep3 from "../../../assets/user-img-3.png";
+import peep1 from "../../../assets/khurshida.jpg";
+import peep2 from "../../../assets/tamanna.jpg";
+import peep3 from "../../../assets/tamanna.jpg";
 
 const comments = [
   {
@@ -49,7 +49,7 @@ const Comment = () => {
       {comments.map((data) => (
         <Box key={data.id} className="mt-2 mb-3 d-flex">
           <div>
-            <img src={data.img} alt="" width="50px" />
+            <img className='rounded-circle shadow-small' src={data.img} alt="" width="50px" />
           </div>
           <div className="ms-3">
             <h5>{data.name}</h5>
