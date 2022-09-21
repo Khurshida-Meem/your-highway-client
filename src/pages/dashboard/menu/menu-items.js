@@ -17,11 +17,6 @@ export const menu = [
     link: "/dashboard/user",
   },
   {
-    name: "Packages",
-    icon: SupportAgentIcon,
-    link: "/dashboard/support",
-  },
-  {
     name: "My Bookings",
     icon: PeopleAltIcon,
     link: "/",
