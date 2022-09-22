@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AboutUs from './pages/about-us';
 import Places from './pages/all-places';
 import SignIn from './pages/authentication/sign-in';
 import SignUp from './pages/authentication/sign-up';
@@ -21,6 +22,7 @@ const Main = () => {
             <Route exact path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/places" element={<Places />} />
+            <Route path="/about" element={<AboutUs />} />
             <Route
               path="/places/:placesId"
               element={

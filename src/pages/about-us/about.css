@@ -1,0 +1,13 @@
+.about-bg{
+    
+    background: url('../../assets/about-banner.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+  height: 100vh;
+  background-size: cover;
+}
+
+.banner-about-inset{
+    background-color: rgba(0, 0, 0, 0.559);
+    height: 100vh;
+}
