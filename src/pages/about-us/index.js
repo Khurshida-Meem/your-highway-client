@@ -28,7 +28,7 @@ const AboutUs = () => {
         <Grid className="m-auto px-5" xs={12} sm={6} item>
           <div>
             <h1 className="display-5">Our Story</h1>
-            <p className="letter-spacing-3 mb-4 h6">
+            <p className="letter-spacing-3 mb-4">
               INSPIRED & PASSIONATE TRAVELERS
             </p>
             <p className="text-dark">
@@ -48,7 +48,7 @@ const AboutUs = () => {
         <Grid className="m-auto px-5" xs={12} sm={6} item>
           <div>
             <h1 className="display-5">Our Values</h1>
-            <p className="letter-spacing-3 mb-4 h6">JOURNEYS WORTH TAKING</p>
+            <p className="letter-spacing-3 mb-4">JOURNEYS WORTH TAKING</p>
             <p className="text-dark">
               Meh synth Schlitz, tempor duis single-origin coffee ea next level
               ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit
