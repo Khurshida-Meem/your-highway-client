@@ -18,8 +18,6 @@ const SinglePlace = () => {
   const { destination, country, thumb, description, cost, star, starCount } =
     place;
 
-  console.log(hotels);
-
   useEffect(() => {
     (async () => {
       let response = await fetch(THUNK_SERVER + `places/${placesId}`);
@@ -59,7 +57,7 @@ const SinglePlace = () => {
         </Box>
         <Hotels />
         <Divider sx={{ mt: 3 }} />
-        <Comment />
+        <Comment id={placesId} />
       </Container>
       <Footer />
     </div>

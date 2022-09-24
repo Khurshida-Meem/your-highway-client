@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import useAuth from "../../../../hooks/useAuth";
 import {
   fetchReviewsData, sendNewReview,
-  
 } from "../../../../redux/reviews/actions";
 import AllReviews from "./reviews";
 import "./reviews.scss";
