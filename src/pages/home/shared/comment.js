@@ -84,6 +84,12 @@ const Comment = ({ id }) => {
             <p>{data?.date}</p>
             <p className="h6 text-black">{data?.comment}</p>
           </div>
+          {
+            user?.email === data.email && <div>
+              <button>Edit</button>
+              <button>update</button>
+            </div>
+          }
         </Box>
       ))}
     </div>
