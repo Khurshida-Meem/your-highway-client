@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Avatar, Box } from "@mui/material";
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -6,13 +6,13 @@ import { THUNK_SERVER } from "../../../redux/server";
 import useAuth from "../../../hooks/useAuth";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import variables from '../../../sass/_variable.module.scss';
 
 const Comment = ({ id }) => {
   const [comments, setComments] = useState([]);
 
   const { firebaseContext } = useAuth();
-  const { user } = firebaseContext;
+  const { user, admin } = firebaseContext;
   const selectedComments = comments.filter(comment => comment.placeId === id )
 
   const {
@@ -35,8 +35,6 @@ const Comment = ({ id }) => {
     };
 
     axios.post(THUNK_SERVER + "comments", comment);
-
-    alert("Commented successfully");
     reset();
   };
 
@@ -45,6 +43,14 @@ const Comment = ({ id }) => {
       .then((res) => res.json())
       .then((data) => setComments(data));
   }, [comments]);
+
+  const handleDelete = id => {
+    const proceed = window.confirm("Are you sure, you want to delete?");
+    if (proceed) {
+      axios.delete(THUNK_SERVER + "comments/"+ id);
+    }
+    
+  }
 
 
   return (
@@ -70,26 +76,38 @@ const Comment = ({ id }) => {
       </div>
 
       {selectedComments.map((data) => (
-        <Box key={data?.id} className="mt-2 mb-3 d-flex">
+        <Box key={data?._id} className="mt-2 mb-3 d-flex">
           <div>
-            <img
-              className="rounded-circle shadow-small"
-              src={data?.img}
-              alt=""
-              width="50px"
-            />
+            {data?.img ? (
+              <img
+                className="rounded-circle shadow-small"
+                src={data?.img}
+                alt=""
+                width="50px"
+              />
+            ) : (
+              <Avatar
+                className="shadow-small"
+                sx={{
+                  bgcolor: variables.colorDark,
+                  width: "50px",
+                  height: "50px",
+                }}
+                alt={data?.name}
+              />
+            )}
+            
           </div>
-          <div className="ms-3">
+          <div className="mx-3">
             <h5>{data?.name}</h5>
             <p>{data?.date}</p>
             <p className="h6 text-black">{data?.comment}</p>
           </div>
-          {
-            user?.email === data.email && <div>
-              <button>Edit</button>
-              <button>update</button>
+          {(user?.email === data.email || admin) && (
+            <div>
+              <button onClick={() => handleDelete(data._id)}>Delete</button>
             </div>
-          }
+          )}
         </Box>
       ))}
     </div>

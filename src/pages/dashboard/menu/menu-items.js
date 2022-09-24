@@ -16,16 +16,16 @@ export const menu = [
     icon: DashboardIcon,
     link: "/dashboard/user",
   },
-  {
-    name: "My Bookings",
-    icon: PeopleAltIcon,
-    link: "/",
-  },
-  {
-    name: "My Luggage",
-    icon: LuggageIcon,
-    link: "/dashboard/luggage",
-  },
+  // {
+  //   name: "My Bookings",
+  //   icon: PeopleAltIcon,
+  //   link: "/",
+  // },
+  // {
+  //   name: "My Luggage",
+  //   icon: LuggageIcon,
+  //   link: "/dashboard/luggage",
+  // },
   {
     name: "My Reviews",
     icon: StarsIcon,
@@ -52,27 +52,9 @@ export const adminMenu = [
     access: "admin",
   },
   {
-    name: "Bookings",
-    icon: BookIcon,
-    link: "/",
-    access: "admin",
-  },
-  {
     name: "Make Admin",
     icon: AdminPanelSettingsIcon,
     link: "/dashboard/make-admin",
-    access: "admin",
-  },
-  {
-    name: "Guides",
-    icon: KayakingIcon,
-    link: "/",
-    access: "admin",
-  },
-  {
-    name: "Hotels",
-    icon: ApartmentIcon,
-    link: "/dashboard/hotels",
     access: "admin",
   },
   {

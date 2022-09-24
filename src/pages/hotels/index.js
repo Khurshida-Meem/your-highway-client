@@ -16,7 +16,7 @@ const Hotels = () => {
       <h2>Hotel Sevices on this Destination</h2>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {hotels.map((data) => (
-          <div className="col ">
+          <div key={data?.id} className="col ">
             <div className="card rounded-card h-100">
               <img
                 src={data?.img}
