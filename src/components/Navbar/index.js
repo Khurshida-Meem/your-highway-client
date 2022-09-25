@@ -58,7 +58,7 @@ const Navbar = () => {
                         };
                       }}
                       className="link py-2 px-4"
-                      to="sign-in"
+                      to="/sign-in"
                     >
                       Sign In
                     </NavLink>
