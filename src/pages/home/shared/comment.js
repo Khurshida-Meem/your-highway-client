@@ -13,7 +13,7 @@ const Comment = ({ id }) => {
 
   const { firebaseContext } = useAuth();
   const { user, admin } = firebaseContext;
-  const selectedComments = comments.filter(comment => comment.placeId === id )
+  const selectedComments = comments.filter(comment => comment.placeId === id );
 
   const {
     register,

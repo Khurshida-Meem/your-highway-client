@@ -4,6 +4,7 @@ import AdminRoute from '../../../private-routes/admin-route';
 import BlogManagement from '../blog-management';
 import AddBlog from '../blog-management/add-blog';
 import AllBlogs from '../blog-management/all-blogs';
+import Comments from '../comments';
 import DashboardHome from '../dashboard-home';
 import UserHome from '../dashboard-home/userHome';
 import ManageHotels from '../hotel-management';
@@ -30,6 +31,7 @@ const NestedRoutes = () => {
         <Route path="/my-reviews" element={<Reviews />} />
         <Route path="/blog" element={<BlogManagement />} />
         <Route path="/add-blog" element={<AddBlog />} />
+        <Route path="/comment" element={<Comments />} />
         <Route
           path="/all-blogs"
           element={

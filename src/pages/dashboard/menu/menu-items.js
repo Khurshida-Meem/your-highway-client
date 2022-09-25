@@ -5,6 +5,7 @@ import StarsIcon from "@mui/icons-material/Stars";
 // import LuggageIcon from "@mui/icons-material/Luggage";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import DescriptionIcon from "@mui/icons-material/Description";
+import CommentIcon from "@mui/icons-material/Comment";
 
 export const menu = [
   {
@@ -12,11 +13,7 @@ export const menu = [
     icon: DashboardIcon,
     link: "/dashboard/user",
   },
-  // {
-  //   name: "My Bookings",
-  //   icon: PeopleAltIcon,
-  //   link: "/",
-  // },
+
   // {
   //   name: "My Luggage",
   //   icon: LuggageIcon,
@@ -31,6 +28,11 @@ export const menu = [
     name: "Blog",
     icon: DescriptionIcon,
     link: "/dashboard/blog",
+  },
+  {
+    name: "My Comments",
+    icon: CommentIcon,
+    link: "/dashboard/comment",
   },
 ];
 
@@ -69,5 +71,10 @@ export const adminMenu = [
     name: "Blog",
     icon: DescriptionIcon,
     link: "/dashboard/blog",
+  },
+  {
+    name: "Comments",
+    icon: CommentIcon,
+    link: "/dashboard/comment",
   },
 ];
