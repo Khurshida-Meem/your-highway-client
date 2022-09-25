@@ -11,7 +11,7 @@ import fetchBlogs from "../../../redux/blogs/thunk/fetch-blogs";
 
 const BlogManagement = () => {
   const { firebaseContext } = useAuth();
-  const { admin } = firebaseContext;
+  const { admin, user } = firebaseContext;
 
   const blogsData = useSelector((state) => state?.blogs?.blogs);
   const dispatch = useDispatch();
@@ -51,7 +51,7 @@ const BlogManagement = () => {
         <h3 className="mt-5 mb-3">Manage Blogs</h3>
         {admin || (
           <div>
-            <AllBlogs blogsData={blogsData} />
+            <AllBlogs />
           </div>
         )}
         {admin && <BlogByCategory />}

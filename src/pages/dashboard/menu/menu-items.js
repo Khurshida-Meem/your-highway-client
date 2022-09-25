@@ -1,12 +1,8 @@
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import PlaceIcon from "@mui/icons-material/Place";
-import BookIcon from "@mui/icons-material/Book";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import KayakingIcon from "@mui/icons-material/Kayaking";
-import ApartmentIcon from "@mui/icons-material/Apartment";
 import StarsIcon from "@mui/icons-material/Stars";
-import LuggageIcon from "@mui/icons-material/Luggage";
+// import LuggageIcon from "@mui/icons-material/Luggage";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import DescriptionIcon from "@mui/icons-material/Description";
 

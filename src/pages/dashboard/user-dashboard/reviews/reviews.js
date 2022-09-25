@@ -32,7 +32,7 @@ const AllReviews = () => {
       dispatch(deleteReview(id));
     }
   };
-
+ 
   const handleClickOpen = (id) => {
     setOpen(true);
     setUpdateId(id);
