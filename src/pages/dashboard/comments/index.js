@@ -14,13 +14,11 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import { THUNK_SERVER } from "../../../redux/server";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useNavigate } from "react-router-dom";
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const navigate = useNavigate();
 
   const { firebaseContext } = useAuth();
   const { user, admin } = firebaseContext;
@@ -62,6 +60,7 @@ const Comments = () => {
           <TableHead>
             <TableRow>
               <TableCell align="left">Name</TableCell>
+              <TableCell align="left">Email</TableCell>
               <TableCell align="left">Comment</TableCell>
               <TableCell align="left">Link</TableCell>
               <TableCell align="left">Action</TableCell>
@@ -73,11 +72,12 @@ const Comments = () => {
               ?.map((row) => (
                 <TableRow key={row._id}>
                   <TableCell align="left">{row?.name}</TableCell>
+                  <TableCell align="left">{row?.email}</TableCell>
                   <TableCell align="left">{row?.comment}</TableCell>
                   <TableCell align="left">
                     <span
                       onClick={() => handleLinkClick(row?.placeId)}
-                      className="cursor-pointer"
+                      className="text-decoration-underline primary-text cursor-pointer"
                     >
                       view comment
                     </span>

@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../components/footer";
 import Navbar from "../../components/Navbar";
 import fetchPlaces from "../../redux/places/thunk/fetch-places";
-import Header from "../home/shared/header";
 import Place from "../home/shared/place";
 import Search from "./search";
 

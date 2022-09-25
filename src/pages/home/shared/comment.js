@@ -105,7 +105,7 @@ const Comment = ({ id }) => {
           </div>
           {(user?.email === data.email || admin) && (
             <div>
-              <button onClick={() => handleDelete(data._id)}>Delete</button>
+              <button className='button pink-bg px-3 py-1 rounded-pill' onClick={() => handleDelete(data._id)}>Delete</button>
             </div>
           )}
         </Box>
