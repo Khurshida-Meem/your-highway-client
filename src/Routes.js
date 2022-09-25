@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AboutBd from './pages/about-bd';
 import AboutUs from './pages/about-us';
 import Places from './pages/all-places';
 import SignIn from './pages/authentication/sign-in';
@@ -23,6 +24,7 @@ const Main = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/places" element={<Places />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/about-bd" element={<AboutBd />} />
             <Route
               path="/places/:placesId"
               element={

@@ -16,8 +16,8 @@ export const pages = [
         link: '/about',
     },
     {
-        name: 'Contact',
-        link: '/contact',
+        name: 'About Bangladesh',
+        link: '/about-bd',
     },
     
 ]

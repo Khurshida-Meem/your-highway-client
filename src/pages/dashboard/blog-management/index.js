@@ -6,14 +6,13 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import useAuth from "../../../hooks/useAuth";
 import BlogByCategory from "./category-blogs";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import fetchBlogs from "../../../redux/blogs/thunk/fetch-blogs";
 
 const BlogManagement = () => {
   const { firebaseContext } = useAuth();
-  const { admin, user } = firebaseContext;
+  const { admin } = firebaseContext;
 
-  const blogsData = useSelector((state) => state?.blogs?.blogs);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
