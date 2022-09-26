@@ -40,3 +40,9 @@
     position: fixed;
     bottom: 18px;
 }
+
+.badge {
+    .MuiBadge-colorSecondary {
+  background-color: $color-pink !important;
+}
+}
