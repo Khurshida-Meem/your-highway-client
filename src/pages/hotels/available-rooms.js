@@ -15,7 +15,7 @@ const AvailableRooms = ({ room }) => {
         <div className="card-text">
           <ul>
             {room?.features?.map((feat) => (
-              <ol>{feat}</ol>
+              <li>{feat}</li>
             ))}
           </ul>
         </div>

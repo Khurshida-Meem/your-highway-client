@@ -1,21 +1,29 @@
 import { Box, Card, Container, Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/footer";
 import Navbar from "../../components/Navbar";
+import { THUNK_SERVER } from "../../redux/server";
 import { BannerBg } from "../../styled.components";
 import Header from "../home/shared/header";
 import AvailableRooms from "./available-rooms";
 import { hotels } from "./db";
 import HotelFeatures from "./hotel-features";
+import Meals from "./meals";
 
 let key = 0;
 
 const SingleHotel = () => {
   const { hotelId } = useParams();
+  const [hotel, setHotel] = useState({})
 
-  const hotelArr = hotels.filter((data) => data.id === parseInt(hotelId));
-  const hotel = hotelArr[0];
+  useEffect(() => {
+    fetch(THUNK_SERVER + "hotels/" + hotelId)
+      .then((res) => res.json())
+      .then((data) => setHotel(data));
+  }, [hotelId]);
+
 
   return (
     <div>
@@ -32,10 +40,9 @@ const SingleHotel = () => {
         {/* ======== Rooms Info ================ */}
         <Box>
           <Header title="Available Rooms" />
-          <hr />
           <Grid xs={12} sm={6} md={8} item>
             <Grid container spacing={2}>
-              {hotel.available_rooms.map((data) => (
+              {hotel?.available_rooms?.map((data) => (
                 <Grid item key={key++} xs={12} sm={6} md={4}>
                   <AvailableRooms room={data} />
                 </Grid>
@@ -44,16 +51,22 @@ const SingleHotel = () => {
           </Grid>
         </Box>
         {/* ============== Features ============ */}
-        <Box>
+        <Box className='mt-5'>
+          <Header title="Available Features" />
           <Grid xs={12} sm={6} md={8} item>
             <Grid container spacing={2}>
-              {hotel.features.map((data) => (
+              {hotel?.features?.map((data) => (
                 <Grid item key={key++} xs={12}>
                   <HotelFeatures data={data} />
                 </Grid>
               ))}
             </Grid>
           </Grid>
+        </Box>
+        {/* ============== Meals ============ */}
+        <Box className='mt-5'>
+          <Header title="Available Meals" />
+          <Meals meals={hotel?.meals} />
         </Box>
       </Container>
 
