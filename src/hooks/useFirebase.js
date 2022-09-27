@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import initializeAuthentication from '../firebase/firebase.init';
+import { THUNK_SERVER } from '../redux/server';
 
 initializeAuthentication();
 const useFirebase = () => {
@@ -87,7 +88,7 @@ const useFirebase = () => {
 
     // for admin and normal user check
     useEffect(() => {
-        fetch(`https://your-highway-travel.herokuapp.com/users/${user.email}`)
+        fetch(THUNK_SERVER+`users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -103,7 +104,7 @@ const useFirebase = () => {
     // save user to db
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://your-highway-travel.herokuapp.com/users', {
+        fetch(THUNK_SERVER+'users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

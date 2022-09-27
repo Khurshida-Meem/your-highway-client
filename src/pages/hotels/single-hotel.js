@@ -1,4 +1,4 @@
-import { Box, Card, Container, Grid } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -8,7 +8,7 @@ import { THUNK_SERVER } from "../../redux/server";
 import { BannerBg } from "../../styled.components";
 import Header from "../home/shared/header";
 import AvailableRooms from "./available-rooms";
-import { hotels } from "./db";
+import BookingDialog from "./booking-dialog";
 import HotelFeatures from "./hotel-features";
 import Meals from "./meals";
 
@@ -17,6 +17,15 @@ let key = 0;
 const SingleHotel = () => {
   const { hotelId } = useParams();
   const [hotel, setHotel] = useState({})
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     fetch(THUNK_SERVER + "hotels/" + hotelId)
@@ -51,7 +60,7 @@ const SingleHotel = () => {
           </Grid>
         </Box>
         {/* ============== Features ============ */}
-        <Box className='mt-5'>
+        <Box className="mt-5">
           <Header title="Available Features" />
           <Grid xs={12} sm={6} md={8} item>
             <Grid container spacing={2}>
@@ -64,12 +73,25 @@ const SingleHotel = () => {
           </Grid>
         </Box>
         {/* ============== Meals ============ */}
-        <Box className='mt-5'>
+        <Box className="mt-5">
           <Header title="Available Meals" />
           <Meals meals={hotel?.meals} />
         </Box>
+        <Box className="mt-5 text-center">
+          <button
+            onClick={handleClickOpen}
+            className="button pink-bg py-2 w-50"
+          >
+            Request a Booking
+          </button>
+        </Box>
       </Container>
-
+      <BookingDialog
+        setOpen={setOpen}
+        open={open}
+        handleClose={handleClose}
+        hotel={hotel}
+      />
       <Footer />
     </div>
   );
