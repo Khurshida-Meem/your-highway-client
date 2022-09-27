@@ -1,4 +1,3 @@
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import PlaceIcon from "@mui/icons-material/Place";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import StarsIcon from "@mui/icons-material/Stars";
@@ -6,6 +5,7 @@ import StarsIcon from "@mui/icons-material/Stars";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import DescriptionIcon from "@mui/icons-material/Description";
 import CommentIcon from "@mui/icons-material/Comment";
+import StyleIcon from "@mui/icons-material/Style";
 
 export const menu = [
   {
@@ -13,12 +13,12 @@ export const menu = [
     icon: DashboardIcon,
     link: "/dashboard/user",
   },
-
-  // {
-  //   name: "My Luggage",
-  //   icon: LuggageIcon,
-  //   link: "/dashboard/luggage",
-  // },
+  {
+    name: "Bookings",
+    icon: StyleIcon,
+    link: "/dashboard/bookings",
+    access: "admin",
+  },
   {
     name: "My Reviews",
     icon: StarsIcon,
@@ -56,9 +56,9 @@ export const adminMenu = [
     access: "admin",
   },
   {
-    name: "Users",
-    icon: PeopleAltIcon,
-    link: "/",
+    name: "Bookings",
+    icon: StyleIcon,
+    link: "/dashboard/bookings",
     access: "admin",
   },
   {

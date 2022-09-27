@@ -10,7 +10,9 @@ import { Badge, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { adminMenu, menu } from "./menu-items";
 import useAuth from "../../../hooks/useAuth";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import fetchBlogs from "../../../redux/blogs/thunk/fetch-blogs";
 
 const drawerWidth = 210;
 
@@ -72,7 +74,12 @@ const DrawerLarge = ({ open, handleMenuClick }) => {
   const location = useLocation();
 
   const blogsData = useSelector(state => state.blogs.blogs);
+  const dispatch = useDispatch();
   const length = blogsData.filter((data) => data.status === "Pending").length;
+
+useEffect(() => {
+  dispatch(fetchBlogs);
+},[dispatch])
 
   return (
     <Drawer variant="permanent" open={open}>
