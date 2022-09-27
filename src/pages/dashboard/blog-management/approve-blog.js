@@ -42,26 +42,66 @@ const ApproveBlog = ({ id, open, handleClose, setOpen }) => {
       aria-labelledby="scroll-dialog-title"
       aria-describedby="scroll-dialog-description"
     >
-      <DialogTitle id="scroll-dialog-title">Approve Blog</DialogTitle>
+      <DialogTitle id="scroll-dialog-title">Approve/Reject Blog</DialogTitle>
       <DialogContent>
         <h4>{filtered[0]?.username}</h4>
         <p>{filtered[0]?.date}</p>
         <p className="h6">{filtered[0]?.blog}</p>
 
         <div className="mt-4">
+          {filtered[0]?.status === "Pending" && (
+            <>
+              <button
+                onClick={() => onStatusChanged("Approved")}
+                className="button px-3 py-2 green-bg me-4"
+              >
+                Approve
+              </button>
+              <button
+                onClick={() => onStatusChanged("Rejected")}
+                className="button px-3 py-2 red-bg me-4"
+              >
+                Reject
+              </button>
+            </>
+          )}
+          {filtered[0]?.status === "Approved" && (
+            <>
+              <button
+                onClick={() => onStatusChanged("Pending")}
+                className="button px-3 py-2 green-bg me-4"
+              >
+                Pending
+              </button>
+              <button
+                onClick={() => onStatusChanged("Rejected")}
+                className="button px-3 py-2 red-bg me-4"
+              >
+                Reject
+              </button>
+            </>
+          )}
+          {filtered[0]?.status === "Rejected" && (
+            <>
+              <button
+                onClick={() => onStatusChanged("Approved")}
+                className="button px-3 py-2 green-bg me-4"
+              >
+                Approve
+              </button>
+              <button
+                onClick={() => onStatusChanged("Pending")}
+                className="button px-3 py-2 red-bg me-4"
+              >
+                Pending
+              </button>
+            </>
+          )}
+
           <button
-            onClick={() => onStatusChanged("Approved")}
-            className="button px-3 py-2 green-bg me-4"
+            onClick={handleClose}
+            className="button px-3 py-2 text-black grey-bg"
           >
-            Approve
-          </button>
-          <button
-            onClick={() => onStatusChanged("Rejected")}
-            className="button px-3 py-2 red-bg me-4"
-          >
-            Reject
-          </button>
-          <button onClick={handleClose} className="button px-3 py-2 text-black grey-bg">
             Close
           </button>
         </div>
