@@ -1,9 +1,9 @@
 import {
   ADD_BLOGS,
   APPROVE_BLOG,
+  BLOGS_SEARCH,
   DELETE_BLOGS,
   FETCH_BLOGS,
-  UPDATE_BLOGS,
 } from "./action-types";
 
 const initialState = {
@@ -43,6 +43,11 @@ const reducer = (state = initialState, action) => {
             status: status,
           };
         }),
+      };
+    case BLOGS_SEARCH:
+      return {
+        ...state,
+        searchKey: action.payload,
       };
 
     default:

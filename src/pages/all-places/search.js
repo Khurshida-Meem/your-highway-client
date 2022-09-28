@@ -3,11 +3,12 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import searchImg from '../../assets/search.svg'
 import { searchKey } from '../../redux/places/actions';
+import { searchKey as blogsKey } from '../../redux/blogs/actions';
 import './search.scss';
 
 let filterTimeout;
 
-const Search = () => {
+const Search = ({blog}) => {
 
     const dispatch = useDispatch();
 
@@ -15,7 +16,8 @@ const Search = () => {
     const handleSearchKey = (e) => {
       clearTimeout(filterTimeout);
       filterTimeout = setTimeout(() => {
-        dispatch(searchKey(e.target.value));
+        blog && dispatch(blogsKey(e.target.value));
+        blog || dispatch(searchKey(e.target.value));
       }, 300);
     };
 

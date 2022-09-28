@@ -10,7 +10,8 @@ import Blog from "./blog";
 import "./blog.scss";
 
 const Blogs = () => {
-  const blogsData = useSelector((state) => state?.blogs?.blogs);
+  const blogsData = useSelector((state) => state?.blogs);
+  const {blogs, searchKey} = blogsData
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,10 +30,22 @@ const Blogs = () => {
         </div>
       </div>
       <Container sx={{ mt: 10 }}>
-        <Search />
+        <Search blog={true} />
         <div className="mt-3 row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-          {blogsData
+          {blogs
             ?.filter((blog) => blog.status === "Approved")
+            ?.filter((data) => {
+              if (searchKey !== null) {
+                return (
+                  data?.username
+                    .toLowerCase()
+                    .includes(searchKey.toLowerCase()) ||
+                  data?.title.toLowerCase().includes(searchKey.toLowerCase()) ||
+                  data?.category.toLowerCase().includes(searchKey.toLowerCase())
+                );
+              }
+              return true;
+            })
             ?.map((data) => (
               <Blog key={data._id} data={data} />
             ))}

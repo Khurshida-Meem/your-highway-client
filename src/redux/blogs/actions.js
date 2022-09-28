@@ -1,4 +1,4 @@
-import { ADD_BLOGS, APPROVE_BLOG, DELETE_BLOGS, FETCH_BLOGS, UPDATE_BLOGS } from "./action-types";
+import { ADD_BLOGS, APPROVE_BLOG, BLOGS_SEARCH, DELETE_BLOGS, FETCH_BLOGS, UPDATE_BLOGS } from "./action-types";
 
 export const loaded = (data) => {
   return {
@@ -31,6 +31,13 @@ export const updated = (id, blog) => {
   return {
     type: UPDATE_BLOGS,
     payload: { id, blog },
+  };
+};
+
+export const searchKey = (key) => {
+  return {
+    type: BLOGS_SEARCH,
+    payload: key,
   };
 };
 
