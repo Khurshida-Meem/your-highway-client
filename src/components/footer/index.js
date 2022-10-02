@@ -106,7 +106,7 @@ const Footer = () => {
               gutterBottom
             >
               &copy; {new Date().getFullYear()}. All Rights Reserved by
-              Khurshida.
+              Khurshida Jahan.
             </Typography>
           </Box>
         </Container>
