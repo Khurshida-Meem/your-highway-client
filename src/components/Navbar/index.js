@@ -30,7 +30,9 @@ const Navbar = () => {
 
             <Box sx={{ display: { xs: "none", md: "block" } }}>
               <Box className="d-flex ms-5 link-container">
-                {pages.map((page) => (
+                {pages
+                .filter(page => page?.device !== 'small')
+                .map((page) => (
                   <div key={key++} className="ms-4">
                     <NavLink
                       style={({ isActive }) => {
@@ -46,13 +48,7 @@ const Navbar = () => {
                     </NavLink>
                   </div>
                 ))}
-                {/* <div className="ms-4">
-                  <span
-                    className="link py-2 px-4"
-                  >
-                    About
-                  </span>
-                </div> */}
+               
                 <div className="dropdown ms-4">
                   <span className="dropbtn link py-2 px-4">About</span>
                   <div className="dropdown-content">

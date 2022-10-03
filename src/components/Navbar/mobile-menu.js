@@ -9,8 +9,12 @@ import ListItemText from '@mui/material/ListItemText';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import { pages } from './menu-items';
 import { useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const MobileMenu = () => {
+
+  const { firebaseContext } = useAuth();
+  const { user } = firebaseContext;
 
     const navigate = useNavigate();
     const [state, setState] = React.useState({
@@ -39,11 +43,26 @@ navigate(link, { replace: true });
         <List>
           {pages.map((text, index) => (
             <ListItem key={text.name} disablePadding>
-              <ListItemButton onClick={() => handleClick(text.link)} className="border ms-3 mt-2">
+              <ListItemButton
+                onClick={() => handleClick(text.link)}
+                className="border ms-3 mt-2"
+              >
                 <ListItemText primary={text.name} />
               </ListItemButton>
             </ListItem>
           ))}
+          {user?.email ? (
+            ""
+          ) : (
+            <ListItem disablePadding>
+              <ListItemButton
+                onClick={() => handleClick("/sign-in")}
+                className="border ms-3 mt-2"
+              >
+                <ListItemText primary={'Sign In'} />
+              </ListItemButton>
+            </ListItem>
+          )}
         </List>
       </Box>
     );
