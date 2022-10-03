@@ -11,13 +11,6 @@ export const pages = [
         name: 'Blogs',
         link: '/blogs',
     },
-    {
-        name: 'About Us',
-        link: '/about',
-    },
-    {
-        name: 'About Bangladesh',
-        link: '/about-bd',
-    },
+    
     
 ]

@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
       <AppBar className="dark-bg" position="sticky">
-        <Container sx={{py:1}} maxWidth="xl">
+        <Container sx={{ py: 1 }} maxWidth="xl">
           <Toolbar disableGutters>
             <img
               className="logo"
@@ -46,6 +46,21 @@ const Navbar = () => {
                     </NavLink>
                   </div>
                 ))}
+                {/* <div className="ms-4">
+                  <span
+                    className="link py-2 px-4"
+                  >
+                    About
+                  </span>
+                </div> */}
+                <div className="dropdown ms-4">
+                  <span className="dropbtn link py-2 px-4">About</span>
+                  <div className="dropdown-content">
+                    <NavLink to="/about">About Us</NavLink>
+                    <NavLink to="/about-bd">About Bangladesh</NavLink>
+                  </div>
+                </div>
+
                 {user?.email ? (
                   ""
                 ) : (
