@@ -18,7 +18,7 @@ const Home = () => {
 
         <OfferedServices />
         <WhyChoose />
-        {/* <CountryFiltered /> */}
+        <CountryFiltered />
         <VideoSection />
         <Reviews />
         <Footer />

@@ -14,7 +14,7 @@ const CountryFiltered = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-      dispatch(fetchPlaces());
+      dispatch(fetchPlaces);
     }, [dispatch]);
 
     const placesData = useSelector(state => state.places.places);
