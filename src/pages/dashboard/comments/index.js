@@ -9,19 +9,22 @@ import {
   TableRow,
   Tooltip,
 } from "@mui/material";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import useAuth from "../../../hooks/useAuth";
-import { THUNK_SERVER } from "../../../redux/server";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useDispatch, useSelector } from "react-redux";
+import fetchComments from "../../../redux/comments/thunk/fetch-comments";
+import deleteComment from "../../../redux/comments/thunk/delete-comment";
 
 const Comments = () => {
-  const [comments, setComments] = useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const dispatch = useDispatch();
 
   const { firebaseContext } = useAuth();
   const { user, admin } = firebaseContext;
+
+  const comments = useSelector((state) => state.comments.comments);
 
   const selectedComments = comments.filter(
     (comment) => comment.email === user.email
@@ -37,15 +40,13 @@ const Comments = () => {
   };
 
   useEffect(() => {
-    fetch(THUNK_SERVER + "comments")
-      .then((res) => res.json())
-      .then((data) => setComments(data));
-  }, [comments]);
+    dispatch(fetchComments);
+  }, [dispatch]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      axios.delete(THUNK_SERVER + "comments/" + id);
+      dispatch(deleteComment(id));
     }
   };
 
