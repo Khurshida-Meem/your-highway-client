@@ -8,14 +8,13 @@ import Navbar from "../../../components/Navbar";
 import { THUNK_SERVER } from "../../../redux/server";
 import { BannerBg } from "../../../styled.components";
 import Hotels from "../../hotels";
-import { hotels } from "../../hotels/db";
 import Comment from "./comment";
 
 const SinglePlace = () => {
   const [place, setPlace] = useState({});
   const { placesId } = useParams();
 
-  const { destination, country, thumb, description, cost, star, starCount } =
+  const { destination, country, thumb, description, star, starCount } =
     place;
 
   useEffect(() => {
