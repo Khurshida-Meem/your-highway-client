@@ -70,7 +70,7 @@ navigate(link, { replace: true });
             <ListItem disablePadding>
               <ListItemButton
                 onClick={() => handleClick("/sign-in")}
-                className="border ms-3 mt-2"
+                className="button pink-bg rounded text-white text-center mx-4 my-2"
               >
                 <ListItemText primary={"Sign In"} />
               </ListItemButton>
