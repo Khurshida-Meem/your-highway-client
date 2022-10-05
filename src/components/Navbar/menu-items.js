@@ -12,13 +12,16 @@ export const pages = [
     link: "/blogs",
   },
   {
-    name: "About Us",
-    link: "/about",
-    device: "small",
+    name: "About",
+    dropdown: [
+      {
+        name: "About Us",
+        link: "/about",
+      },
+      {
+        name: "About Bangladesh",
+        link: "/about-bd",
+      },
+    ],
   },
-  {
-    name: "About Bangladesh",
-    link: "/about-bd",
-    device: "small",
-  }
 ];

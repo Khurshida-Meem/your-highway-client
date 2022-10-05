@@ -41,16 +41,29 @@ navigate(link, { replace: true });
         onKeyDown={toggleDrawer(anchor, false)}
       >
         <List>
-          {pages.map((text, index) => (
-            <ListItem key={text.name} disablePadding>
-              <ListItemButton
-                onClick={() => handleClick(text.link)}
-                className="border ms-3 mt-2"
-              >
-                <ListItemText primary={text.name} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+          {pages.map((data) =>
+            data?.dropdown ? (
+              data?.dropdown?.map((row) => (
+                <ListItem key={row?.name} disablePadding>
+                  <ListItemButton
+                    onClick={() => handleClick(row?.link)}
+                    className="button pink-bg rounded text-white text-center mx-4 mt-2"
+                  >
+                    <ListItemText primary={row.name} />
+                  </ListItemButton>
+                </ListItem>
+              ))
+            ) : (
+              <ListItem key={data?.name} disablePadding>
+                <ListItemButton
+                  onClick={() => handleClick(data?.link)}
+                  className="button pink-bg rounded text-white text-center mx-4 mt-2"
+                >
+                  <ListItemText primary={data.name} />
+                </ListItemButton>
+              </ListItem>
+            )
+          )}
           {user?.email ? (
             ""
           ) : (
@@ -59,7 +72,7 @@ navigate(link, { replace: true });
                 onClick={() => handleClick("/sign-in")}
                 className="border ms-3 mt-2"
               >
-                <ListItemText primary={'Sign In'} />
+                <ListItemText primary={"Sign In"} />
               </ListItemButton>
             </ListItem>
           )}
