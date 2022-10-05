@@ -12,7 +12,6 @@ import Home from "./pages/home";
 import SinglePlace from "./pages/home/shared/single-place";
 import Hotels from "./pages/hotels";
 import SingleHotel from "./pages/hotels/single-hotel";
-import Packages from "./pages/tour-packages";
 import PrivateRoute from "./private-routes";
 
 const Main = () => {
@@ -52,14 +51,7 @@ const Main = () => {
           />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route
-            path="/packages"
-            element={
-              <PrivateRoute>
-                <Packages />
-              </PrivateRoute>
-            }
-          />
+          
           <Route path="/blogs" element={<Blogs />} />
           <Route
             path="/dashboard/*"
