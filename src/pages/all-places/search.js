@@ -28,7 +28,7 @@ const Search = ({blog}) => {
           className="w-100 light-grey-bg border-0 outline-0 px-3 py-2"
           type="search"
           name="search"
-          placeholder="Enter your Destination"
+          placeholder="Search"
           onChange={handleSearchKey}
         />
       </Box>

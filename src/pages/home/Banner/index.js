@@ -42,8 +42,8 @@ const Banner = () => {
                                 alt="First slide"
                             />
                             <Carousel.Caption className='carousel-content'>
-                                <h1 className='text-white'>{data.heading}</h1>
-                                <p className='h3 text-white'>{data.desc}</p>
+                                <h1 className='display-3 text-white'>{data.heading}</h1>
+                                <p className='h6 text-white'>{data.desc}</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                     ))

@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import "./Navbar.scss";
 import MobileMenu from "./mobile-menu";
 import { Avatar, Box } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Dropdown from "./dropdown";
 import useAuth from "../../hooks/useAuth";
 import { pages } from "./menu-items";
@@ -15,15 +15,21 @@ let key = 0;
 const Navbar = () => {
   const { firebaseContext } = useAuth();
   const { user } = firebaseContext;
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/', { replace: true });
+  };
 
   return (
     <AppBar className="dark-bg" position="sticky">
       <Container sx={{ py: 1 }} maxWidth="xl">
         <Toolbar disableGutters>
           <img
-            className="logo"
+            className="logo cursor-pointer"
             src="https://tailwindui.com/img/logos/workflow-mark-white.svg"
             alt="logo"
+            onClick={handleClick}
           />
 
           <Box sx={{ display: { xs: "none", md: "block" } }}>
