@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { THUNK_SERVER } from './server';
 
 
 export default axios.create({
-    baseURL: `https://your-highway-travel.herokuapp.com/`
+    baseURL: THUNK_SERVER
  });
 
 
